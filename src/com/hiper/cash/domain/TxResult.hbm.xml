@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TxResult" schema="dbo" table="txResult">
+    <composite-id class="com.hiper.cash.domain.TxResultId" name="id">
+      <key-property name="crsResultId" type="string">
+        <column length="3" name="cRsResultId"/>
+      </key-property>
+      <key-property name="crsResultExt" type="string">
+        <column length="4" name="cRsResultExt"/>
+      </key-property>
+    </composite-id>
+    <property name="drsDescription" type="string">
+      <column length="100" name="dRsDescription"/>
+    </property>
+    <property name="drsLongDescript" type="string">
+      <column length="400" name="dRsLongDescript"/>
+    </property>
+     <property name="crsTipoMensajes" type="string">
+      <column length="1" name="crsTipoMensajes"/>
+    </property>
+  </class>
+</hibernate-mapping>

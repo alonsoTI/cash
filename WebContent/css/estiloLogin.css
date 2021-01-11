@@ -1,0 +1,481 @@
+@charset "iso-8859-1";
+/*AQUI VA LOS ESTILOS DE LOS FORMULARIOS EN VERDANA*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /*background: #EFF2EB;*/     
+}
+td {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+th {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+form {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+input {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+textarea {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+select {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+ul {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    list-style-type: disc;
+    list-style-position: outside;
+}
+
+li {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+ol {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    list-style-type: upper-roman;
+    list-style-position: outside;
+}
+
+.small {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+}
+
+.big {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.bodystyle {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.box1 {
+    padding: 3px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #CCCCCC #666666 #666666 #CCCCCC;
+}
+
+.box2 {
+    border-width: 3px;
+    border-style: solid;
+    padding: 5px;
+}
+
+a,a:visited,a:hover {
+	color: #666;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: none;
+}
+
+
+a.nav:link {
+    color: #333333;
+    padding: 2px;}
+
+a.nav:visited {
+    color: #cccccc;
+    padding: 2px;
+}
+
+a.nav:hover {
+    color: #FFFFFF;
+    background-color: #666666;
+    padding: 2px;
+}
+
+a.menu {
+    font-family: arial, helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+a.menu:hover {
+    font-family: arial, helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
+
+a.box {
+    padding: 3px;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    border: medium solid #CCCCCC;
+    color: #000000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+a.box:hover {
+    color: #000000;
+    padding: 3px;
+    text-decoration: none;
+    background-color: #666666;
+    /*border: medium solid #3366FF;*/
+    /*border: medium solid #3366FF;*/
+    color: #FFFFFF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.titulologo {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: #003366;
+    font-weight: bold;
+}
+.boton{
+    font-size:10px;
+    font-family:Verdana,Helvetica;
+    font-weight:bold;
+    color:white;
+    background:#638cb5;
+    border:0px;
+    width:80px;
+    height:19px;
+}
+.textofooter {
+    color:#003399;
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:10px;
+}
+.textousuario {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    /*color: #003366;*/
+	color: #000000;
+    font-weight: normal;
+}
+.textoTR {
+    /*font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;	*/
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.textoEnlace {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.textoTitulo {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #003366;
+    font-weight: bold;
+}
+.userTable {
+	border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+	border-style: outset outset outset outset;
+	border-color: black black black black;
+	border-collapse: collapse;
+}
+
+.userTable td {
+	border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+	border-style: outset outset outset outset;
+	border-color: black black black black;
+	border-collapse: collapse;
+}
+
+.userTable th {
+	border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+	border-style: outset outset outset outset;
+	border-color: black black black black;
+	border-collapse: collapse;
+	background-color: #4f81bd;
+        font-size: 12px;
+}
+.even {
+background-color: #F4F4F4;
+}
+.odd {
+background-color: #ffffff;
+}
+.combo {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    width: 135px;
+}
+.combo2 {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    width: 100px;
+}
+.scroll {
+     width:auto;
+     height:100px;
+     background-color:#F2F2F2;
+     overflow:auto;
+}
+.textoSmart {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+.textoPie {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+
+.tablalist {
+	/*width: 650px;*/
+	display: table;
+	/*table-layout: fixed;*/
+	margin: 0px;
+	background-color: #ccc;
+}
+
+.tablalist thead tr th {
+	height: 19px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 2px;
+	padding-right: 4px;
+	vertical-align: middle;
+	/*border-bottom: 1px solid #999999;*/
+	color: #333333;
+	background: url('../images/listheader.gif') top left repeat-x #CCC;
+	font-size: 12px;
+}
+
+.tablalist tbody tr td { /*height: 16px;*/
+	padding: 1px 4px 1px 2px;
+	/*padding-right: 4px;*/
+	font-size: 11px;
+	/*
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	cursor: default;*/
+	/*background-color: #FFF;*/
+}
+.textoFrm
+{
+    text-align:left;
+    height:auto;
+    width:auto;
+    margin-top:10px;
+    margin-left:20px;
+    margin-right:20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    color:#4C6B6E;
+    line-height:1.5em;
+
+}
+.textoTitulo2
+{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 16px;
+    color: #445F62;
+    font-weight: bold;
+    font-style: normal;
+    line-height: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+.textoTitulo3
+{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    color: #445F62;
+    font-weight: bold;
+    font-style: normal;
+    line-height: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+.textRed {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #F00;
+}
+.enlaceboton {    
+   font-family: verdana, arial, sans-serif;
+   font-size: 8pt;
+   font-weight: bold;
+   padding: 2px;
+   /*background-color: #ffffcc;*/
+  background-color: #DDDDDD;
+   /*color: #666666;*/
+   color: #000000;
+   text-decoration: none;
+}
+.enlaceboton:link,
+.enlaceboton:visited {
+   border-top: 1px solid #cccccc;
+   border-bottom: 2px solid #666666;
+   border-left: 1px solid #cccccc;
+   border-right: 2px solid #666666;
+}
+.enlaceboton:hover {
+    border-bottom: 1px solid #cccccc;
+   border-top: 2px solid #666666;
+   border-right: 1px solid #cccccc;
+   border-left: 2px solid #666666;
+} 
+.botons{
+	width: 95px;
+	float:left;
+	border: 1px #fff solid;
+	/*background: #fff;*/
+	padding: 1px;
+	margin: 1px 1px;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;	
+	font-size:9px;
+}
+.botonsHover{
+	width: 95px;
+	float:left;
+	border: 1px #fff outset;
+	background: #eee;
+	padding: 1px;
+	margin: 1px 1px;
+	text-align: center;
+	cursor: pointer;
+	color: #333;
+	font-size:10px;
+}
+.clr{
+	clear: both;
+	margin: 0;
+	padding: 0;	
+}
+
+.mytabla {
+	border: 1px solid #666;
+	/*width: 100%;*/
+	font-size: 10px;
+	margin: 20px 0 20px 0 !important;
+}
+.mytabla th,td {
+	padding: 2px 4px 2px 4px !important;
+	text-align: left;
+	vertical-align: top;
+}
+.mytabla  thead tr {
+	background-color: #fc0;
+}
+
+.mytabla  th.sorted {
+	background-color: orange;
+}
+
+.mytabla  th a,th a:visited {
+	color: black;
+}
+
+.mytabla th a:hover {
+	text-decoration: underline;
+	color: black;
+}
+span,a
+	{
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	background-repeat: no-repeat;
+	list-style-type: none;
+}
+fieldset {
+border: 1px solid #CCA383;
+/*width: 50%;*/
+/*background: #FFE8EF;*/
+background: #EFF2EB;
+padding: 3px;
+}
+fieldset legend {
+/*background: #CCA383;*/
+padding: 6px;
+font-weight: bold;
+}
+
+
+input.cashbutton
+{
+   font-size:11px;
+   font-family:Arial,sans-serif;
+   font-weight:bold;
+   color:#FFFFFF;   
+   background-color:#10458C;
+}
+
+.info{
+	background: #e8edff;
+	font-weight: bolder;
+	color: #0062ac;
+	font-size: 12px;
+	font-family: Arial;
+	padding-left: 10px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+/* Formulario */
+.label {
+	background: #e8edff;
+	font-weight: bolder;
+	color: #0062ac;
+	font-size: 12px;
+	font-family: Arial;
+	padding-left: 6px;
+}
+
+.input{
+	background: #eff2ff;
+	color: black;
+	font-size: 14px;
+}
+
+.input-read{
+	background: #eff2ff;
+	color: #6699CC; /* silver, #669;*/ 
+	font-weight: bold;
+	padding-left: 6px;
+	font-size: 14px;
+}
+
+
+
+.focus {
+    border: 2px solid #1022A8;
+    background-color: #FFEEAA;
+}

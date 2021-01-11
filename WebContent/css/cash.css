@@ -1,0 +1,155 @@
+body{
+	background: url('img/fondo.gif') no-repeat fixed;
+	background-position: right;
+	padding: 15px;
+}
+
+h1{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 20px;
+	color: cornflowerblue;
+}
+
+h1,h2,h3,h4,h5{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;	
+	color: cornflowerblue;
+}
+img{
+	border: none;
+}
+
+a:link {text-decoration: none}
+a:visited {text-decoration: none}
+a:active {text-decoration: none}
+a:hover {text-decoration: underline; color: red;}
+
+input.cashbutton
+{
+   font-size:11px;
+   font-family:Arial,sans-serif;
+   font-weight:bold;
+   color:#FFFFFF;   
+   background-color:#10458C;
+}
+
+.info{
+	background: #e8edff;
+	font-weight: bolder;
+	color: #0062ac;
+	font-size: 12px;
+	font-family: Arial;
+	padding-left: 10px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+/* Formulario */
+.label {
+	background: #e8edff;
+	font-weight: bolder;
+	color: #0062ac;
+	font-size: 12px;
+	font-family: Arial;
+	padding-left: 6px;
+}
+
+.input{
+	background: #eff2ff;
+	color: black;
+	font-size: 14px;
+}
+
+.input-read{
+	background: #eff2ff;
+	color: #6699CC; /* silver, #669;*/ 
+	font-weight: bold;
+	padding-left: 6px;
+	font-size: 14px;
+}
+
+#formulario{
+	width: 100%;
+	font-family: Arial,sans-serif;
+	font-size: 12px;	
+}
+
+#formulario select {
+	font-weight: bold;
+	font-size: 11px;
+	color: #0062ac;
+	text-align: right;
+	background-color: #eff2ff;
+	font-family: Arial;	
+}
+
+/* Fin Formulario*/
+
+
+#titulo{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 16px;
+	color: cornflowerblue;
+}
+
+
+.paginado img {
+	border: none;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+}
+
+.paginado label {
+	font-weight: bold;
+	font-size: 12px;
+	color: #0062ac;
+	font-family: Arial;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.exportacion img {
+	border: none;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+}
+
+#lista-vacia
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 14px;
+	color: cornflowerblue;
+}
+
+#hor-zebra
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+    border: 1px solid gainsboro;
+}
+#hor-zebra th
+{
+	font-size: 12px;
+	font-weight: normal;
+	padding: 5px 4px;
+	color: white;
+    background: cornflowerblue;
+    border-right: 1px solid gainsboro;
+}
+
+#hor-zebra td
+{
+	padding: 6px;
+	color: #669;
+    border-right: 1px solid gainsboro;
+}
+
+#hor-zebra .odd{
+	background: #e8edff;
+}
+
+

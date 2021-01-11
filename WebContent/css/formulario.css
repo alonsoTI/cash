@@ -1,0 +1,427 @@
+		body{	    	   		
+	   		color:	#484848; 
+	   		font-family:Arial,Helvetica,sans-serif;
+	   		padding:10px;
+		}
+		
+		
+		
+		p,h1,form,label,fieldset,input{
+			border:0;margin:0;padding:0;
+		}
+		
+		h1{
+			color:#4169E1;
+			margin: 0;
+			padding-bottom: 5px;		
+			font-size:18px;				
+		}
+		
+		fieldset{
+			margin:auto;
+	    	width:100%;    
+	    	background:#eaf3fa;
+			overflow:hidden; 
+	    	padding:10px;        
+		}
+		
+		h3{
+			color: #4169E1;
+			margin:0 0 10px 0; 
+			padding:0 0 0px 0;
+			font-size:16px;
+			border-bottom:1px solid #4169E1;
+			font-weight: bold;
+		}
+		
+		#ingresarDatos{
+			margin-top: -20px;
+		}
+		
+		#datosTrx{
+			margin-top: -20px;
+		}
+		
+		h4{
+			color: #4169E1;
+			margin:0 0 10px 0; 
+			padding:0 0 0px 0;
+			font-size:16px;		
+			font-weight: bold;
+		}
+		
+		#formulario{    
+    		border: none;	
+    		background: #eaf3fa; 
+    		width: 100%;
+    		border: 0;   
+    		font-size: 11px;
+		}
+    		
+		#formulario td{
+			height: 18px;    			
+			padding-left: 8px;
+		}
+		
+		#formulario label{
+			color:#4169E1;
+		}    	
+    		
+    	#formulario select{    			   
+    		font-size:11px;		
+    		color:	#484848 ;	
+    	}   
+    	
+    	#formulario input{
+    		border-width: 1px;
+    		border-style: solid;    		
+    		border-left-color: #D4D0C8;
+    		border-top-color: #D4D0C8;
+    		color:	#484848;	
+    		text-transform:uppercase;
+    		-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+    	}   		
+    	
+    	#formulario fieldset{    		
+    		border:1px solid #4169E1;
+    		margin: 0;
+    		padding: 0;
+    	}
+    	#formulario legend{    		
+    		color: #4169E1;
+    	}
+    	
+    	#formulario table{
+    		margin:0;
+    		padding: 0;
+    		width: 100%;    
+    		font-size: 12px;		
+    	}
+    	#formulario table th{
+    		color: #4169E1;
+    		text-align: left;
+    		font-weight: normal;
+    		padding-left: 10px;
+    		padding-bottom: 0px;    	
+    		padding-top: 0px;	
+    		margin: 0;    		
+    	}
+    	
+    	#formulario table td{    		
+    		padding-top: 0px;
+    		padding-bottom: 0px;
+    		margin: 0;    		
+    		height: 15px;
+    	}
+    		
+    	#registrar_l{
+			float:left;
+			padding:5px; 
+			margin:10px 0 0 110px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:135px;
+			height:24px;
+			font-size: 13px;
+		}
+		
+		#cancelar_l{
+			float:left;
+			padding:0; 
+			margin:10px 0 0 30px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:135px;
+			height:24px;
+			font-size: 13px;
+		}
+    	
+    		
+		#registrar{
+			float:left;
+			padding:5px; 
+			margin:10px 0 0 140px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:150px;
+			height:24px;
+			font-size: 13px;
+		}
+		
+		#aprobar{
+			float:left;
+			padding:5px; 
+			margin:10px 0 0 140px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:150px;
+			height:24px;
+			font-size: 13px;
+		}
+		
+		#rechazar{			
+			float:left;
+			padding:0; 
+			margin:10px 0 0 40px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:100px;
+			height:24px;
+			font-size: 13px;
+		}
+		
+		#exportPdf{
+			float:right;
+			padding:5px; 
+			margin:10px 0 0 10px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:100px;
+			height:24px;
+			font-size: 13px;
+		}
+		
+		#exportPdf_2{
+			float:right;
+			padding:5px; 
+			margin:35px 0 0 10px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:100px;
+			height:24px;
+			font-size: 13px;
+		}
+		
+		#exportExcel{
+			float:right;
+			padding:5px; 
+			margin:10px 0 0 10px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:120px;
+			height:24px;
+			font-size: 13px;
+		}
+		
+		#exportExcel_2{
+			float:right;
+			padding:5px; 
+			margin:35px 0 0 10px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:120px;
+			height:24px;
+			font-size: 13px;
+		}
+		
+		#imprimir_2{
+			float:right;
+			padding:5px; 
+			margin:10px 0 0 60px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:120px;
+			height:24px;
+			font-size: 13px;
+		}
+	
+		#cancelar{
+			float:left;
+			padding:0; 
+			margin:10px 0 0 40px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:100px;
+			height:24px;
+			font-size: 13px;
+		}
+		
+		#imprimir{
+			float:left;
+			padding:0; 
+			margin:10px 0 0 40px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:100px;
+			height:24px;
+			font-size: 13px;
+		}
+			
+		#buscar{
+			float:left;
+			padding:0; 
+			margin:15px 0 0 100px;
+			background:#d0e8f7; 
+			color:#418eb6;
+			width:100px;
+			height:24px;
+			font-size: 13px; 
+		}
+		
+		#registrar_l:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+			
+		#cancelar_l:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+		
+		#registrar:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+		
+		#aprobar:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+		
+		#rechazar:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+			
+		#cancelar:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+		
+		#imprimir:hover{
+			background:#418eb6; color:#d0e8f7;
+		}		
+			
+		#buscar:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+		
+		#exportPdf:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+		
+		#exportExcel:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+		
+		#imprimir:hover{
+			background:#418eb6; color:#d0e8f7;
+		}
+			
+		#registrar,#cancelar,#buscar,#imprimir{
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+		}
+		
+		#aviso{
+			color:#CC0000;
+			font-size:11px; 
+			padding-bottom: 25px;
+			padding-top: 40px;
+			margin-top: 40px;
+			text-align: center;
+		}
+		
+		#avisoMontosEquivalentes{
+			color:#CC0000;
+			font-size:11px; 
+			padding-bottom: 25px;
+			padding-top: 30px;
+			text-align: center;
+			display: block;
+		}
+		
+		#indicadorAvisoMontosEquivalentes{
+			color:#CC0000;
+			font-size:11px; 
+			padding-bottom: 25px;
+			padding-top: 3px;
+			text-align: center;
+			display: inline;
+		}
+		
+		.error{
+			color:#CC0000;			
+			font-size: 14px;
+			padding-bottom: 15px;
+			padding-top: 15px;
+			text-align: center;			
+		}
+		
+		.error_h3{
+			color:#CC0000;									
+			border-bottom:1px solid #CC0000;
+			margin-top: -20px;
+		}
+		
+		.error_h4{			
+			color:#CC0000;			
+			border: none;
+		}
+		
+		.colorCbx{
+        	background-color: color:#CC0000;        
+    	} 
+    	
+    	.sucess{
+    	 	color: green;
+    	 	margin-top: -20px;
+    	 	border-bottom: 1px solid green;
+    	}	
+	
+		.paginado img {
+			border: none;
+			vertical-align: middle;
+			width: 20px;
+			height: 20px;
+		}
+		
+		.paginado label {
+			font-weight: bold;
+			font-size: 12px;
+			color: #0062ac;
+			font-family: Arial;
+			text-align: center;
+			vertical-align: middle;
+		}
+		
+		.exportacion img {
+			border: none;
+			vertical-align: middle;
+			width: 20px;
+			height: 20px;
+		}
+		
+		#headEmpresa{
+			font-size: 11px;
+			text-align: left;
+			color:  #101693;		
+			margin-top: -10px;
+			font-weight: bold;
+		}
+		
+		#radioFlagMismo {
+			margin-left: 20px;
+			margin-right: 4px;
+			border-style: none;	
+		}
+		
+		#m_NombreBanco{
+			margin-bottom: 10px;
+		}
+		
+		#m_CtaAbonoEntidad{
+			margin-top: 5px;
+		}
+
+		#lblBeneficiario{
+			margin-bottom: 10px;
+			margin-top: 20px;
+			display: block;
+			font-weight: bold;
+			text-decoration: underline;
+			font-size: 12px;
+		}
+		
+		#avisoIT{
+			font-size: 9px;
+			color: #101693;
+			text-align: left;
+		}
+		
+	

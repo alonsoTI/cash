@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmBanco" schema="dbo" table="tmBanco">
+    <id name="cbaIdBanco" type="int">
+      <column name="cBaIdBanco"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="cbaNombre" type="string">
+      <column length="40" name="cBaNombre"/>
+    </property>
+    <property name="dbaCodigo" type="string">
+      <column length="15" name="dBaCodigo"/>
+    </property>
+    <property name="dbaPais" type="string">
+      <column length="32" name="dBaPais" not-null="true"/>
+    </property>
+    <property name="dbaCiudad" type="string">
+      <column length="32" name="dBaCiudad"/>
+    </property>
+    <property name="dbaCodigoSwift" type="string">
+      <column length="20" name="dBaCodigoSwift"/>
+    </property>
+    <property name="dbaCodigoFed" type="string">
+      <column length="20" name="dBaCodigoFED"/>
+    </property>
+    <property name="dbaCodigoAba" type="string">
+      <column length="20" name="dBaCodigoABA"/>
+    </property>
+    <property name="dbaCuentaBce" type="string">
+      <column length="20" name="dBaCuentaBCE"/>
+    </property>
+    <property name="dbaIntercambioSwfit" type="java.lang.Character">
+      <column length="1" name="dBaIntercambioSwfit"/>
+    </property>
+    <property name="cbaEstado" type="java.lang.Character">
+      <column length="1" name="cBaEstado"/>
+    </property>
+    <property name="dbaDireccion" type="string">
+      <column length="40" name="dBaDireccion"/>
+    </property>
+    <property name="cbaModifyUser" type="string">
+      <column length="7" name="cBaModifyUser"/>
+    </property>
+    <property name="fbaModifyDate" type="string">
+      <column length="8" name="fBaModifyDate"/>
+    </property>
+    <property name="hbaModifyTime" type="string">
+      <column length="6" name="hBaModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

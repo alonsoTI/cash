@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmTransactionType" schema="dbo" table="tmTransactionType">
+    <composite-id class="com.hiper.cash.domain.TmTransactionTypeId" name="id">
+      <key-property name="ctttransactionId" type="string">
+        <column length="2" name="cTTTransactionId"/>
+      </key-property>
+      <key-property name="cttaplicacion" type="string">
+        <column length="20" name="cTTAplicacion"/>
+      </key-property>
+    </composite-id>
+    <property name="dtttransactionName" type="string">
+      <column length="20" name="dTTTransactionName"/>
+    </property>
+    <property name="ctttransGroup" type="java.lang.Character">
+      <column length="1" name="cTTTransGroup"/>
+    </property>
+    <property name="cttmerchantVal" type="string">
+      <column length="1" name="cTTMerchantVal"/>
+    </property>
+    <property name="cttterminalVal" type="string">
+      <column length="1" name="cTTTerminalVal"/>
+    </property>
+    <property name="cttfloorLimitVal" type="string">
+      <column length="1" name="cTTFloorLimitVal"/>
+    </property>
+    <property name="cttactivityLimitVal" type="string">
+      <column length="1" name="cTTActivityLimitVal"/>
+    </property>
+    <property name="cttmerchantBalanceVal" type="string">
+      <column length="1" name="cTTMerchantBalanceVal"/>
+    </property>
+    <property name="cttsaveLog" type="string">
+      <column length="1" name="cTTSaveLog"/>
+    </property>
+    <property name="ctttransType" type="string">
+      <column length="1" name="cTTTransType"/>
+    </property>
+    <property name="ctttransRoute" type="string">
+      <column length="1" name="cTTTransRoute"/>
+    </property>
+    <property name="cttrequiredFieldsReq" type="string">
+      <column length="50" name="cTTRequiredFieldsReq"/>
+    </property>
+    <property name="cttrequiredFieldsResp" type="string">
+      <column length="50" name="cTTRequiredFieldsResp"/>
+    </property>
+    <property name="cttconverterType" type="string">
+      <column length="20" name="cTTConverterType"/>
+    </property>
+    <property name="cttmodifyUser" type="string">
+      <column length="7" name="cTTModifyUser"/>
+    </property>
+    <property name="fttmodifyDate" type="string">
+      <column length="8" name="fTTModifyDate"/>
+    </property>
+    <property name="httmodifyTime" type="string">
+      <column length="6" name="hTTModifyTime"/>
+    </property>
+    <property name="cttarchivo" type="string">
+      <column length="50" name="cTTArchivo"/>
+    </property>
+    <property name="cttwithoutCost" type="string">
+      <column length="1" name="cTTWithoutCost"/>
+    </property>
+    <set inverse="true" name="taActivityLimits">
+      <key>
+        <column length="2" name="cALTransactionId" not-null="true"/>
+        <column length="20" name="cALAplicacion" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaActivityLimit"/>
+    </set>
+    <set inverse="true" name="taFloorLimits">
+      <key>
+        <column length="2" name="cFLTransactionId" not-null="true"/>
+        <column length="20" name="cFLAplicacion" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaFloorLimit"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmFuncionario" schema="dbo" table="tmFuncionario">
+    <id name="cfuIdFuncionario" type="string">
+      <column length="10" name="cFuIdFuncionario"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dfuNombre" type="string">
+      <column length="50" name="dFuNombre"/>
+    </property>
+    <property name="dfuTelefono" type="string">
+      <column length="50" name="dFuTelefono"/>
+    </property>
+    <property name="dfuEmail" type="string">
+      <column length="50" name="dFuEmail"/>
+    </property>
+    <property name="cfuModifyUser" type="string">
+      <column length="7" name="cFuModifyUser"/>
+    </property>
+    <property name="ffuModifyDate" type="string">
+      <column length="8" name="fFuModifyDate"/>
+    </property>
+    <property name="hfuModifyTime" type="string">
+      <column length="6" name="hFuModifyTime"/>
+    </property>
+    <set inverse="true" name="taFuncionarioEmpresas">
+      <key>
+        <column length="10" name="cFEmIdFuncionario" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaFuncionarioEmpresa"/>
+    </set>
+    <set inverse="true" name="taFuncionarioServicios">
+      <key>
+        <column length="10" name="cFSIdFuncionario" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaFuncionarioServicio"/>
+    </set>
+  </class>
+</hibernate-mapping>

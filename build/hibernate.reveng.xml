@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="BFPCash_HCenter" match-schema="dbo"/>
+  <table-filter match-name="taActivityLimit"/>
+  <table-filter match-name="taAprobacionOrden"/>
+  <table-filter match-name="taAprobadorServicio"/>
+  <table-filter match-name="taBuzonEnvio"/>
+  <table-filter match-name="taCamposRequeridos"/>
+  <table-filter match-name="taContactoEmpresa"/>
+  <table-filter match-name="taCuentasServicioEmpresa"/>
+  <table-filter match-name="taDetalleFormato"/>
+  <table-filter match-name="taDetalleMapaCampos"/>
+  <table-filter match-name="taEmpresaDeServicio"/>
+  <table-filter match-name="taEntidadEmpresa"/>
+  <table-filter match-name="taFloorLimit"/>
+  <table-filter match-name="taFuncionarioEmpresa"/>
+  <table-filter match-name="taFuncionarioServicio"/>
+  <table-filter match-name="taGlosaCobroSinBD"/>
+  <table-filter match-name="taLogValidacion"/>
+  <table-filter match-name="taMapaCampos"/>
+  <table-filter match-name="taMerchantProfileApplication"/>
+  <table-filter match-name="taOrden"/>
+  <table-filter match-name="taSecuencial"/>
+  <table-filter match-name="taServicioEntidad"/>
+  <table-filter match-name="taServicioOpcion"/>
+   <table-filter match-name="taServicioxEmpresa"/>  
+  <!--
+  <table-filter match-catalog="BFPCash_HCenter" match-schema="dbo" match-name="taServicioxEmpresa"/>
+  <table-filter match-catalog="BFPCash_HCenter" match-schema="dbo" match-name="taServicioxEmpresaEx"/>
+  -->
+  <table-filter match-name="taTarifa"/>
+  <table-filter match-name="taTerminalApplTransaction"/>
+  <table-filter match-name="taTerminalApplication"/>
+  <table-filter match-name="taTipoPagoServicio"/>
+  <table-filter match-name="tmAcquirer"/>
+  <table-filter match-name="tmApplication"/>
+  <table-filter match-name="tmBanco"/>
+  <table-filter match-name="tmDownloadProfile"/>
+  <table-filter match-name="tmEmpresa"/>
+  <table-filter match-name="tmFormato"/>
+  <table-filter match-name="tmFuncionario"/>
+  <table-filter match-name="tmGroupCard"/>
+  <table-filter match-name="tmMerchant"/>
+  <table-filter match-name="tmMerchantChain"/>
+  <table-filter match-name="tmMerchantProfile"/>
+  <table-filter match-name="tmServicio"/>
+  <table-filter match-name="tmSoporte"/>
+  <table-filter match-name="tmTariff"/>
+  <table-filter match-name="tmTerminal"/>
+  <table-filter match-name="tmTipoPago"/>
+  <table-filter match-name="tmTransactionType"/>
+  <table-filter match-name="tpAlarmaLog"/>
+  <table-filter match-name="tpDetalleBuzon"/>
+  <table-filter match-name="tpDetalleCobroSinBD"/>
+  <table-filter match-name="tpDetalleOrden"/>
+  <table-filter match-name="txBatch"/>
+  <table-filter match-name="txListField"/>
+  <table-filter match-name="txListFieldDetail"/>
+  <table-filter match-name="txParameter"/>
+  <table-filter match-name="txResult"/>
+  <table-filter match-name="taEmpresaFormato"/>
+</hibernate-reverse-engineering>

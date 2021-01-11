@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaLogValidacion" schema="dbo" table="taLogValidacion">
+    <composite-id class="com.hiper.cash.domain.TaLogValidacionId" name="id">
+      <key-property name="clvaIdEnvio" type="int">
+        <column name="cLVaIdEnvio"/>
+      </key-property>
+      <key-property name="nlvaNumLinea" type="long">
+        <column name="nLVaNumLinea"/>
+      </key-property>
+    </composite-id>
+    <property name="dlvaDescripcion" type="string">
+      <column name="dLVaDescripcion"/>
+    </property>
+    <property name="enlace" type="string">
+      <column name="dLVEnlace"/>
+    </property>
+  </class>
+</hibernate-mapping>

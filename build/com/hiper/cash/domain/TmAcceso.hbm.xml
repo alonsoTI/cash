@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.hiper.cash.domain.TmAcceso" schema="dbo" table="tmAcceso">
+    <id name="tarjeta" type="string">
+      <column name="aTarjeta"/>
+      <generator class="assigned"/>
+    </id>   
+    
+    <property name="fechaAcceso" type="timestamp" >
+    	<column name="fAFechaAcceso" not-null="true" />
+    </property>
+    <property name="numeroIntento" type="int">
+      <column  name="nANumeroIntento" not-null="true"/>
+    </property>
+    <property name="numeroBloqueo" type="int">
+      <column  name="nANumeroBloqueo" not-null="true"/>
+    </property>
+     
+       
+  </class>
+  <sql-query name="findByTCO" callable="true">
+  	<return alias="tmAcceso" class="com.hiper.cash.domain.TmAcceso"/>
+  </sql-query>
+  
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaContactoEmpresa" schema="dbo" table="taContactoEmpresa">
+    <composite-id class="com.hiper.cash.domain.TaContactoEmpresaId" name="id">
+      <key-property name="cceidContacto" type="int">
+        <column name="cCEIdContacto"/>
+      </key-property>
+      <key-property name="cceidEmpresa" type="string">
+        <column length="15" name="cCEIdEmpresa"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TmEmpresa" fetch="select" insert="false" name="tmEmpresa" update="false">
+      <column length="15" name="cCEIdEmpresa" not-null="true"/>
+    </many-to-one>
+    <property name="dcenombre" type="string">
+      <column length="200" name="dCENombre"/>
+    </property>
+    <property name="dceemail" type="string">
+      <column length="100" name="dCEEmail"/>
+    </property>
+    <property name="ccetipo" type="string">
+      <column length="10" name="cCETipo"/>
+    </property>
+    <property name="ccemodifyUser" type="string">
+      <column length="7" name="cCEModifyUser"/>
+    </property>
+    <property name="ccemodifyDate" type="string">
+      <column length="8" name="cCEModifyDate"/>
+    </property>
+    <property name="hcemodifyTime" type="string">
+      <column length="6" name="hCEModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

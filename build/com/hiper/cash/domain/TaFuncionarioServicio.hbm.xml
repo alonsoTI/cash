@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaFuncionarioServicio" schema="dbo" table="taFuncionarioServicio">
+    <composite-id class="com.hiper.cash.domain.TaFuncionarioServicioId" name="id">
+      <key-property name="cfsidServEmp" type="long">
+        <column name="cFSIdServEmp"/>
+      </key-property>
+      <key-property name="cfsidFuncionario" type="string">
+        <column length="10" name="cFSIdFuncionario"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TaServicioxEmpresa" fetch="select" insert="false" name="taServicioxEmpresa" update="false">
+      <column name="cFSIdServEmp" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.hiper.cash.domain.TmFuncionario" fetch="select" insert="false" name="tmFuncionario" update="false">
+      <column length="10" name="cFSIdFuncionario" not-null="true"/>
+    </many-to-one>
+    <property name="cfsmodifyUser" type="string">
+      <column length="7" name="cFSModifyUser"/>
+    </property>
+    <property name="ffsmodifyDate" type="string">
+      <column length="8" name="fFSModifyDate"/>
+    </property>
+    <property name="hfsmodifyHour" type="string">
+      <column length="6" name="hFSModifyHour"/>
+    </property>
+  </class>
+</hibernate-mapping>

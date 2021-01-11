@@ -1,0 +1,105 @@
+<!DOCTYPE form-validation PUBLIC
+     "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.4.0//EN"
+     "http://commons.apache.org/dtds/validator_1_4_0.dtd">
+
+<form-validation>
+	<global>
+		<validator name="required"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validateRequired" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.requiredField" />
+		<validator name="long"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validateLong" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.validateLongField" />
+		<validator name="positiveLong"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validateLongPositive" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.validatePositiveLongField" />
+		<validator name="limiteMontoIT"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validarMontoLimiteTransferenciaIB" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.validateLimiteMontoIT" />
+		<validator name="validValues"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validateValues" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.validateValues" />
+		<validator name="rangoLongitud"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validateRangoLongitud" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.validateRangoLongitud" />
+		<validator name="rangoLongitudMinima"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validateRangoLongitudMinima" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.validateRangoLongitud" />
+		<validator name="dni"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validateDni" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.validateDni" />
+		<validator name="ruc"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validateRuc" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.validateRuc" />		
+		<validator name="tipoPagoCci"
+			classname="com.financiero.cash.validator.GenericValidatorImpl"
+			method="validarTipoPagoCci" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="validacion.pagoscci.mensajes.tipoPagoCciNoSoportado" />
+
+	</global>
+	<!-- Se validan todos los campos usados por la trx cci, en caso el formato 
+		cci no haya sido configurado correctamente -->
+	<formset>
+		<form name="cciFormatForm">
+			<field property="dDBuTipoPago" depends="tipoPagoCci">
+				<arg key="validacion.pagoscci.fields.dDBuTipoPago" />						
+			</field>
+			<field property="nDBuCuentaEmpresa" depends="required, long,positiveLong">
+				<arg key="validacion.pagoscci.fields.nDBuCuentaEmpresa" />
+			</field>
+			<field property="nDBuMonto" depends="required, long, positiveLong, limiteMontoIT">
+				<arg key="validacion.pagoscci.fields.nDBuMonto" />
+			</field>
+			<field property="dDBuMoneda" depends="required, validValues">
+				<arg key="validacion.pagoscci.fields.dDBuMoneda" />
+				<var>
+					<var-name>values</var-name>
+					<var-value>PEN,USD</var-value>
+				</var>
+			</field>
+			<field property="nDBuNumeroCuenta" depends="required,long,rangoLongitud">
+				<arg key="validacion.pagoscci.fields.nDBuNumeroCuenta" />
+				<var>
+					<var-name>minLength</var-name>
+					<var-value>20</var-value>
+				</var>
+				<var>
+					<var-name>maxLength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field property="dDBuTipoDocumento" depends="required,validValues">
+				<arg key="validacion.pagoscci.fields.dDBuTipoDocumento" />
+				<var>
+					<var-name>values</var-name>
+					<var-value>DNI,CIP,PAS,CE,RUC</var-value>
+				</var>
+			</field>
+			<field property="dDBuContrapartida" depends="required, dni, ruc">
+				<arg key="validacion.pagoscci.fields.nDBuDocumento" />
+			</field>
+			<field property="dDBuReferencia" depends="required">
+				<arg key="validacion.pagoscci.fields.dDBuReferencia" />
+			</field>
+			<field property="dDBuAdicional1" depends="required">
+				<arg key="validacion.pagoscci.fields.dDBuAdicional1" />
+			</field>
+			<field property="dDBuAdicional2" depends="required,long,rangoLongitudMinima">
+				<arg key="validacion.pagoscci.fields.dDBuAdicional2" />
+				<var>
+					<var-name>minLength</var-name>
+					<var-value>5</var-value>
+				</var>
+			</field>
+		</form>
+	</formset>
+</form-validation>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaFloorLimit" schema="dbo" table="taFloorLimit">
+    <composite-id class="com.hiper.cash.domain.TaFloorLimitId" name="id">
+      <key-property name="cflmrProfileId" type="string">
+        <column length="15" name="cFLMrProfileId"/>
+      </key-property>
+      <key-property name="cfltransactionId" type="string">
+        <column length="2" name="cFLTransactionId"/>
+      </key-property>
+      <key-property name="cflaplicacion" type="string">
+        <column length="20" name="cFLAplicacion"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TmMerchantProfile" fetch="select" insert="false" name="tmMerchantProfile" update="false">
+      <column length="15" name="cFLMrProfileId" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.hiper.cash.domain.TmTransactionType" fetch="select" insert="false" name="tmTransactionType" update="false">
+      <column length="2" name="cFLTransactionId" not-null="true"/>
+      <column length="20" name="cFLAplicacion" not-null="true"/>
+    </many-to-one>
+    <property name="nflfloorLimit" type="big_decimal">
+      <column name="nFLFloorLimit" precision="12"/>
+    </property>
+    <property name="cflstatus" type="string">
+      <column length="1" name="cFLStatus"/>
+    </property>
+    <property name="nflfloorLimitDollar" type="big_decimal">
+      <column name="nFLFloorLimitDollar" precision="12"/>
+    </property>
+    <property name="cflmodifyUser" type="string">
+      <column length="7" name="cFLModifyUser"/>
+    </property>
+    <property name="fflmodifyDate" type="string">
+      <column length="8" name="fFLModifyDate"/>
+    </property>
+    <property name="hflmodifyTime" type="string">
+      <column length="6" name="hFLModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

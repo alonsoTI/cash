@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaCuentasServicioEmpresa" schema="dbo" table="taCuentasServicioEmpresa">
+    <composite-id class="com.hiper.cash.domain.TaCuentasServicioEmpresaId" name="id">
+      <key-property name="dcsemNumeroCuenta" type="string">
+        <column length="20" name="dCSEmNumeroCuenta"/>
+      </key-property>
+      <key-property name="csemIdServicioEmpresa" type="long">
+        <column name="cSEmIdServicioEmpresa"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TaServicioxEmpresa" fetch="select" insert="false" name="taServicioxEmpresa" update="false">
+      <column name="cSEmIdServicioEmpresa" not-null="true"/>
+    </many-to-one>
+    <property name="dcsemTipoCuenta" type="string">
+      <column length="5" name="dCSEmTipoCuenta"/>
+    </property>
+    <property name="dcsemDescripcion" type="string">
+      <column length="40" name="dCSEmDescripcion"/>
+    </property>
+    <property name="ccsemEstado" type="java.lang.Character">
+      <column length="1" name="cCSEmEstado"/>
+    </property>
+    <property name="ccsemMoneda" type="string">
+      <column length="3" name="cCSEmMoneda"/>
+    </property>
+    <property name="ccsemModifyUser" type="string">
+      <column length="7" name="cCSEmModifyUser"/>
+    </property>
+    <property name="fcsemModifyDate" type="string">
+      <column length="8" name="fCSEmModifyDate"/>
+    </property>
+    <property name="hcsemModifyTime" type="string">
+      <column length="6" name="hCSEmModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

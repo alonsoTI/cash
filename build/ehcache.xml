@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="false">
+<!-- Esta region de cache tiene por duracion 1 hora. Se pueden configurar
+ mas regiones con otras configuraciones-->
+  <cache
+  	 name="oneHourCache"
+     eternal="false"
+     timeToIdleSeconds="3600"
+     timeToLiveSeconds="3600"
+     overflowToDisk="true"
+     maxElementsInMemory="10000"
+     maxElementsOnDisk="1000"
+     diskPersistent="true"
+     memoryStoreEvictionPolicy="LRU"
+  />
+</ehcache>

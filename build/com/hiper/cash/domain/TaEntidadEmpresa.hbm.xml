@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/12/2009 01:49:55 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaEntidadEmpresa" schema="dbo" table="taEntidadEmpresa">
+    <composite-id class="com.hiper.cash.domain.TaEntidadEmpresaId" name="id">
+      <key-property name="ceeidEntidad" type="string">
+        <column length="15" name="cEEIdEntidad"/>
+      </key-property>
+      <key-property name="deetipo" type="string">
+        <column length="2" name="dEETipo"/>
+      </key-property>
+      <key-property name="ceeidServEmpresa" type="long">
+        <column name="cEEIdServEmpresa"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TaServicioEntidad" fetch="select" insert="false" name="taServicioEntidad" update="false">
+      <column name="cEEIdServEmpresa" not-null="true"/>
+      <column length="15" name="cEEIdEntidad" not-null="true"/>
+      <column length="2" name="dEETipo" not-null="true"/>
+    </many-to-one>
+    <property name="cemIdEmpresa" type="string">
+      <column length="15" name="cEmIdEmpresa" not-null="true"/>
+    </property>
+    <property name="deenombre" type="string">
+      <column length="50" name="dEENombre"/>
+    </property>
+    <property name="deeemail" type="string">
+      <column length="40" name="dEEEmail"/>
+    </property>
+    <property name="deetelefono" type="string">
+      <column length="15" name="dEETelefono"/>
+    </property>
+    <property name="deedescripcion" type="string">
+      <column length="40" name="dEEDescripcion"/>
+    </property>
+    <property name="ceetipoDocumento" type="string">
+      <column length="5" name="cEETipoDocumento"/>
+    </property>
+    <property name="neenumDocumento" type="string">
+      <column length="20" name="nEENumDocumento"/>
+    </property>
+    <property name="deecontrapartida" type="string">
+      <column length="20" name="dEEContrapartida"/>
+    </property>
+    <property name="deenomContrapartida" type="string">
+      <column length="100" name="dEENomContrapartida"/>
+    </property>
+    <property name="ceemodifyUser" type="string">
+      <column length="7" name="cEEModifyUser"/>
+    </property>
+    <property name="feemodifyDate" type="string">
+      <column length="8" name="fEEModifyDate"/>
+    </property>
+    <property name="heemodifyTime" type="string">
+      <column length="6" name="hEEModifyTime"/>
+    </property>
+  </class>
+  <!--
+       @query  : getEntidadEmpresa
+       @author : esilva
+       @desc   : Obtiene las entidaddes (empleados, proveedores) de una empresa
+       @input  : servicioid
+                 empresaid
+  -->
+  <sql-query name="getEntidadEmpresa">
+        SELECT ta.nEENumDocumento, ta.dEENombre, ts.nSEnNumCuenta,
+            ts.cSEnTipoCuenta, ts.nSEnMonto, ts.cSEnMoneda,
+            ta.dEETelefono, ta.dEEEmail, ta.dEEDescripcion,
+            ts.cSETipoPago, ta.cEETipoDocumento, ta.cEEIdEntidad,
+            ta.cEmIdEmpresa, ta.dEETipo,ta.dEEcontrapartida,
+            ts.cSEnIdServEmp, tl.dlfDescription desc1, tpa.dTPaDescripcion desc2,
+            tl3.dlfDescription desc3, tl4.dlfDescription desc4, tl5.dlfDescription desc5
+        FROM taEntidadEmpresa ta
+            JOIN taServicioEntidad ts ON ( ts.cSEnIdEntidad = ta.cEEIdEntidad AND ts.cSEnIdServEmp = ta.cEEIdServEmpresa AND ts.cSEnIdServEmp =:servicioid AND ts.cSEnIdEmpresa =:empresaid AND ts.cSEnTipoEntidad =:tipoentidad AND ts.cSEnTipoEntidad=ta.dEETipo)
+            LEFT OUTER JOIN txListField tl ON (ts.cSEnTipoCuenta = tl.cLfCode AND tl.dLfFieldName ='CashTipoCuenta')
+            LEFT OUTER JOIN tmTipoPago  tpa  ON (ts.cSETipoPago = tpa.cTPaIdTipoPago)
+            LEFT OUTER JOIN txListField tl3 ON (ts.cSEnTipoEntidad = tl3.cLfCode AND tl3.dLfFieldName ='CashTipoEntidad')
+            LEFT OUTER JOIN txListField tl4 ON (ts.cSEnMoneda = tl4.cLfCode AND tl4.dLfFieldName ='CashTipoMoneda')
+            LEFT OUTER JOIN txListField tl5 ON (ta.cEETipoDocumento = tl5.cLfCode AND tl5.dLfFieldName ='CashTipoDocumento')
+        ORDER BY ta.cEEIdEntidad ASC
+  </sql-query>
+</hibernate-mapping>

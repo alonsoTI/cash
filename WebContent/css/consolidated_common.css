@@ -1,0 +1,247 @@
+/******************************* standard stuff *************************************/
+
+/*body{
+  font-family: arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+  color: #666666;
+}
+
+h1 { font-size: 200%; letter-spacing: -2px; margin-bottom: 20px; }
+
+h2 { font-size: 180%; letter-spacing: -1px; margin-bottom: 20px; }
+
+h3 { font-size: 150%; letter-spacing: -1px; margin-bottom: 20px; }
+
+h4 { font-size: 120%; letter-spacing: -1px; margin-bottom: 20px; font-weight:bold;}
+
+a { 
+  outline:none;
+  color: #B9D420;
+  text-decoration: none;
+  border-bottom: 1px dotted #B9D420;
+}
+a:visited { color: #B9D420; }
+a:hover { */
+  /*color: #ffffff; 
+  background-color:#ff5398;*/
+ /* color: #009900;
+  border-bottom: 1px solid; 
+}
+
+strong {
+  font-weight:bold;
+}
+
+em {
+  font-style: italic;
+}
+
+p {
+  margin: 0.5em 0;
+  padding-bottom: 0.5em;
+}
+
+blockquote {
+    color:#888888;
+    text-indent:37px;
+    background:transparent url(../images/generic/blockquote.png) top left no-repeat;
+}
+
+cite {
+  font-weight: bold;
+}
+
+pre {
+  padding: 10px;
+  font-size: 11px;
+  background-color:#f7f7f7;
+  padding:2%;
+  border:1px solid #e3e3e3;
+  margin:0;
+  line-height:140%;
+ */
+  /* make lines wrap in pre tag - browser specific so not valid css - lousy browsers */
+ /* white-space: pre-wrap;       *//* css-3 */
+ /* white-space: -moz-pre-wrap;  *//* Mozilla, since 1999 */
+ /* white-space: -pre-wrap;     */ /* Opera 4-6 */
+/*  white-space: -o-pre-wrap;   */ /* Opera 7 */
+/*  word-wrap: break-word;      */ /* Internet Explorer 5.5+ */
+/*}
+
+code {
+  font-family: monaco,"lucida console","courier new",courier,serif;
+  font-size-adjust: none;    
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+*/
+/*********************************** forms *****************************************/
+/*
+label { font-weight: bold; }
+
+input, select {
+  width:100px;
+}
+
+input, textarea, select {
+  border:1px solid #aaaaaa;
+  padding:2px;
+  background:#ffffff url(../images/generic/inputBg.gif) top left no-repeat;
+  margin-top:2px;
+}
+
+input.checkbox {
+  width:15px;
+  background:none;
+  border:0;
+}
+
+input.radio_button {
+  width:15px;
+  background:none;
+  border:0;
+}
+
+input.small, select.small {
+  width:50px;
+}
+
+input.large, select.large {
+  width:200px;
+}
+
+input.extra_large, select.extra_large {
+  width:300px;
+}
+
+input:hover, textarea:hover, select:hover {
+  border:1px solid #888888;
+}
+
+input:active, textarea:active, select:active {
+  border:1px solid #888888;
+}
+
+input.submit {
+  background:#ffffff url(../images/generic/submitBg.png) -20px 0 no-repeat;
+  color:#ffffff;
+}
+
+input.submit:hover {
+  
+  cursor: pointer;
+}
+
+textarea {
+  width:300px;
+  height: 200px;
+}
+
+textarea.deep {
+  height:350px;
+}
+
+textarea.shallow {
+  height:50px;
+}
+
+fieldset {
+  background:#f7f7f7;
+  padding:2%;
+  border:1px solid #e3e3e3;
+  margin:0;
+}
+
+legend {
+  font-weight:bold;
+  font-size: 120%; 
+  letter-spacing: -1px;
+  color:#666666;
+}*/
+
+/******************************** images ****************************************/
+/*
+img {
+  padding:2px;
+  border: 2px solid #cccccc;
+  background-color: #eeeeee;
+}*/
+
+/******************************** tables ***************************************/
+/*
+table {
+  border: 1px solid #999999;
+}
+
+thead {
+  color: #ffffff;
+  background: #999999 url(../images/generic/theadBg.jpg) top left repeat-x;
+  border-bottom: 1px solid #999999;
+}
+
+tr.odd { background-color: #eeeeee; }
+
+th, td {
+  padding:3px;
+  border-right: 1px solid #999999;
+}
+*/
+/********************************** lists **************************************/
+/*
+ol li {
+  list-style-type: decimal;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol, ul, dl {
+  padding-left: 30px;
+}
+
+dd {
+  margin:0 0 4px 0;
+  background-color: #eeeeee;
+  padding:10px;
+}*/
+
+/********************************* LiveValidation *************************************/
+
+.LV_valid {
+    color:#00CC00;
+}
+	
+.LV_invalid {
+	color:#CC0000;
+}
+	
+.LV_validation_message{
+    font-weight:bold;
+    margin:0 0 0 5px;
+}
+    
+/*.LV_valid_field,
+input.LV_valid_field:hover, 
+input.LV_valid_field:active,
+textarea.LV_valid_field:hover, 
+textarea.LV_valid_field:active,
+.fieldWithErrors input.LV_valid_field,
+.fieldWithErrors textarea.LV_valid_field {
+    border: 1px solid #00CC00;
+}
+    
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active,
+.fieldWithErrors input.LV_invalid_field,
+.fieldWithErrors textarea.LV_invalid_field {
+    border: 1px solid #CC0000;
+}*/
+

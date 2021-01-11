@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmGroupCard" schema="dbo" table="tmGroupCard">
+    <id name="cgrGroupId" type="string">
+      <column length="4" name="cGrGroupId"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="com.hiper.cash.domain.TmAcquirer" fetch="select" name="tmAcquirer">
+      <column length="32" name="cGrAcquirerId" not-null="true"/>
+    </many-to-one>
+    <property name="cgrAcquirerAlt" type="string">
+      <column length="32" name="cGrAcquirerAlt"/>
+    </property>
+    <property name="dgrDescripGroup" type="string">
+      <column length="64" name="dGrDescripGroup" not-null="true"/>
+    </property>
+    <property name="cgrCardVerify" type="string">
+      <column length="1" name="cGrCardVerify"/>
+    </property>
+    <property name="cgrDateExpVerify" type="string">
+      <column length="1" name="cGrDateExpVerify"/>
+    </property>
+    <property name="ngrSaleLimAmount" type="big_decimal">
+      <column name="nGrSaleLimAmount" precision="12"/>
+    </property>
+    <property name="ngrSaleLimTimes" type="java.lang.Byte">
+      <column name="nGrSaleLimTimes" precision="2" scale="0"/>
+    </property>
+    <property name="cgrSaleLimAction" type="string">
+      <column length="1" name="cGrSaleLimAction"/>
+    </property>
+    <property name="ngrCashLimAmount" type="big_decimal">
+      <column name="nGrCashLimAmount" precision="12"/>
+    </property>
+    <property name="ngrCashLimTimes" type="java.lang.Byte">
+      <column name="nGrCashLimTimes" precision="2" scale="0"/>
+    </property>
+    <property name="cgrCashLimAction" type="string">
+      <column length="1" name="cGrCashLimAction"/>
+    </property>
+    <property name="ngrGasLimAmount" type="big_decimal">
+      <column name="nGrGasLimAmount" precision="12"/>
+    </property>
+    <property name="ngrGasLimTimes" type="java.lang.Byte">
+      <column name="nGrGasLimTimes" precision="2" scale="0"/>
+    </property>
+    <property name="cgrGasLimAction" type="string">
+      <column length="1" name="cGrGasLimAction"/>
+    </property>
+    <property name="ngrServLimAmount" type="big_decimal">
+      <column name="nGrServLimAmount" precision="12"/>
+    </property>
+    <property name="ngrServLimTimes" type="java.lang.Byte">
+      <column name="nGrServLimTimes" precision="2" scale="0"/>
+    </property>
+    <property name="cgrServLimAction" type="string">
+      <column length="1" name="cGrServLimAction"/>
+    </property>
+    <property name="cgrVerifyCse" type="string">
+      <column length="1" name="cGrVerifyCSE"/>
+    </property>
+    <property name="cgrFlagLocalCard" type="string">
+      <column length="1" name="cGrFlagLocalCard"/>
+    </property>
+    <property name="cgrCardDigitNum" type="string">
+      <column length="16" name="cGrCardDigitNum"/>
+    </property>
+    <property name="cgrFlagMaskCard" type="string">
+      <column length="1" name="cGrFlagMaskCard" not-null="true"/>
+    </property>
+    <property name="cgrFlagPrintSign" type="string">
+      <column length="1" name="cGrFlagPrintSign" not-null="true"/>
+    </property>
+    <property name="cgrState" type="java.lang.Character">
+      <column length="1" name="cGrState"/>
+    </property>
+    <property name="cgrTypeCard" type="java.lang.Character">
+      <column length="1" name="cGrTypeCard"/>
+    </property>
+    <property name="cgrReqDni" type="java.lang.Character">
+      <column length="1" name="cGrReqDNI"/>
+    </property>
+    <property name="cgrReqQuota" type="java.lang.Character">
+      <column length="1" name="cGrReqQuota"/>
+    </property>
+    <property name="cgrReqMoney" type="java.lang.Character">
+      <column length="1" name="cGrReqMoney"/>
+    </property>
+    <property name="cgrReqPin" type="java.lang.Character">
+      <column length="1" name="cGrReqPIN"/>
+    </property>
+    <property name="cgrLastNumber" type="java.lang.Character">
+      <column length="1" name="cGrLastNumber"/>
+    </property>
+    <property name="cgrAplicacion" type="string">
+      <column length="20" name="cGrAplicacion"/>
+    </property>
+    <property name="cgrModifyUser" type="string">
+      <column length="7" name="cGrModifyUser"/>
+    </property>
+    <property name="fgrModifyDate" type="string">
+      <column length="8" name="fGrModifyDate"/>
+    </property>
+    <property name="hgrModifyTime" type="string">
+      <column length="6" name="hGrModifyTime"/>
+    </property>
+    <set inverse="true" name="taActivityLimits">
+      <key>
+        <column length="4" name="cALGroupId" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaActivityLimit"/>
+    </set>
+  </class>
+</hibernate-mapping>

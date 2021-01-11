@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmEmpresa" schema="dbo" table="tmEmpresa">
+  
+    <id name="cemIdEmpresa" type="string">
+      <column length="15" name="cEmIdEmpresa"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="cemCodigoCliente" type="string">
+      <column length="9" name="cEmCodigoCliente"/>
+    </property>
+    <property name="demNombre" type="string">
+      <column length="100" name="dEmNombre"/>
+    </property>
+    <property name="demNombreCorto" type="string">
+      <column length="100" name="dEmNombreCorto"/>
+    </property>
+    <property name="cemDepartamento" type="string">
+      <column length="32" name="cEmDepartamento"/>
+    </property>
+    <property name="cemCiudad" type="string">
+      <column length="32" name="cEmCiudad"/>
+    </property>
+    <property name="demDireccion" type="string">
+      <column length="80" name="dEmDireccion"/>
+    </property>
+    <property name="demTelefono" type="string">
+      <column length="15" name="dEmTelefono"/>
+    </property>
+    <property name="demTelefono2" type="string">
+      <column length="15" name="dEmTelefono2"/>
+    </property>
+    <property name="demTelefono3" type="string">
+      <column length="15" name="dEmTelefono3"/>
+    </property>
+    <property name="demFax" type="string">
+      <column length="15" name="dEmFax"/>
+    </property>
+    <property name="cemEstado" type="string">
+      <column length="6" name="cEmEstado"/>
+    </property>
+    <property name="femFechaIngreso" type="string">
+      <column length="8" name="fEmFechaIngreso"/>
+    </property>
+    <property name="cemAplicacionTarifa" type="string">
+      <column length="10" name="cEmAplicacionTarifa"/>
+    </property>
+    <property name="nemMontoComis" type="big_decimal">
+      <column name="nEmMontoComis" precision="18"/>
+    </property>
+    <property name="nemMonedaComis" type="string">
+      <column length="3" name="nEmMonedaComis"/>
+    </property>
+    <property name="cemMonCtaCargoComis" type="string">
+      <column length="3" name="cEmMonCtaCargoComis"/>
+    </property>
+    <property name="cemTipoCtaCargoComis" type="string">
+      <column length="5" name="cEmTipoCtaCargoComis"/>
+    </property>
+    <property name="demTipoCtaCargoComis" type="string">
+      <column length="40" name="dEmTipoCtaCargoComis"/>
+    </property>
+    <property name="nemCuentaCargoComis" type="string">
+      <column length="20" name="nEmCuentaCargoComis"/>
+    </property>
+    <property name="demBeneficiarioSwift" type="string">
+      <column length="100" name="dEmBeneficiarioSwift"/>
+    </property>
+    <property name="cemIdEmpresaPadre" type="string">
+      <column length="15" name="cEmIdEmpresaPadre"/>
+    </property>
+    <property name="nemDiasRetencion" type="java.lang.Integer">
+      <column name="nEmDiasRetencion"/>
+    </property>
+    <property name="nemNumeroContrato" type="string">
+      <column length="20" name="nEmNumeroContrato"/>
+    </property>
+    <property name="cemRubro" type="string">
+      <column length="80" name="cEmRubro"/>
+    </property>
+    <property name="femFechaFundacion" type="string">
+      <column length="8" name="fEmFechaFundacion"/>
+    </property>
+    <property name="femRegistroBanco" type="string">
+      <column length="8" name="fEmRegistroBanco"/>
+    </property>
+    <property name="cemDepRegBanco" type="string">
+      <column length="10" name="cEmDepRegBanco"/>
+    </property>
+    <property name="cemAgenRegBanco" type="string">
+      <column length="10" name="cEmAgenRegBanco"/>
+    </property>
+    <property name="cemModifyUser" type="string">
+      <column length="7" name="cEmModifyUser"/>
+    </property>
+    <property name="femModifyDate" type="string">
+      <column length="8" name="fEmModifyDate"/>
+    </property>
+    <property name="hemModifyTime" type="string">
+      <column length="6" name="hEmModifyTime"/>
+    </property>    
+    
+    <property name="cEmRUC" type="string">
+      <column length="11" name="cEmRUC"/>
+    </property>
+  
+    
+    <set inverse="true" name="taServicioxEmpresas">
+      <key>
+        <column length="15" name="cSEmIdEmpresa" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaServicioxEmpresa"/>
+    </set>
+    <set inverse="true" name="taContactoEmpresas">
+      <key>
+        <column length="15" name="cCEIdEmpresa" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaContactoEmpresa"/>
+    </set>
+    <set inverse="true" name="taFuncionarioEmpresas">
+      <key>
+        <column length="15" name="cFEmIdEmpresa" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaFuncionarioEmpresa"/>
+    </set>
+  </class>
+</hibernate-mapping>

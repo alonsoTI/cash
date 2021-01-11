@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaBuzonEnvio" schema="dbo" table="taBuzonEnvio">
+    <id name="cbenIdEnvio" type="long">
+      <column name="cBEnIdEnvio"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="fbenFechaCreacion" type="string">
+      <column length="8" name="fBEnFechaCreacion"/>
+    </property>
+    <property name="fbenFechaInicioVig" type="string">
+      <column length="8" name="fBEnFechaInicioVig"/>
+    </property>
+    <property name="fbenFechaFinVig" type="string">
+      <column length="8" name="fBEnFechaFinVig"/>
+    </property>
+    <property name="hbenHoraInicio" type="string">
+      <column length="6" name="hBEnHoraInicio"/>
+    </property>
+    <property name="dbenTipoCuenta" type="string">
+      <column length="3" name="dBEnTipoCuenta"/>
+    </property>
+    <property name="nbenCuentaCargo" type="string">
+      <column length="20" name="nBEnCuentaCargo"/>
+    </property>
+    <property name="cbenTipoIngreso" type="java.lang.Character">
+      <column length="1" name="cBEnTipoIngreso"/>
+    </property>
+    <property name="dbenReferencia" type="string">
+      <column length="50" name="dBEnReferencia"/>
+    </property>
+    <property name="cbenEstado" type="java.lang.Character">
+      <column length="1" name="cBEnEstado"/>
+    </property>
+    <property name="cbenUsuario" type="string">
+      <column length="7" name="cBEnUsuario"/>
+    </property>
+    <property name="cbenIdOrden" type="long">
+      <column name="cBEnIdOrden" not-null="true"/>
+    </property>
+    <property name="cbenIdServEmp" type="java.lang.Long">
+      <column name="cBEnIdServEmp"/>
+    </property>
+    <set inverse="true" name="tpDetalleBuzons">
+      <key>
+        <column name="cDBuIdEnvio" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TpDetalleBuzon"/>
+    </set>
+  </class>
+</hibernate-mapping>

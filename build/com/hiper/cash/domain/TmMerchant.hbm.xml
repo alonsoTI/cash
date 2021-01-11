@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmMerchant" schema="dbo" table="tmMerchant">
+    <id name="cmrMerchantId" type="string">
+      <column length="15" name="cMrMerchantId"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="com.hiper.cash.domain.TmMerchantProfile" fetch="select" name="tmMerchantProfile">
+      <column length="15" name="cMrProfileId" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.hiper.cash.domain.TmMerchantChain" fetch="select" name="tmMerchantChain">
+      <column name="cMrMerchantChain" not-null="true"/>
+    </many-to-one>
+    <property name="cmrStatus" type="string">
+      <column length="1" name="cMrStatus" not-null="true"/>
+    </property>
+    <property name="dmrContactName" type="string">
+      <column length="32" name="dMrContactName"/>
+    </property>
+    <property name="dmrMerchantName" type="string">
+      <column length="64" name="dMrMerchantName" not-null="true"/>
+    </property>
+    <property name="dmrAddress" type="string">
+      <column length="32" name="dMrAddress"/>
+    </property>
+    <property name="dmrPhone" type="string">
+      <column length="12" name="dMrPhone"/>
+    </property>
+    <property name="cmrDepartCode" type="string">
+      <column length="8" name="cMrDepartCode"/>
+    </property>
+    <property name="cmrProvinceCode" type="string">
+      <column length="8" name="cMrProvinceCode"/>
+    </property>
+    <property name="cmrDistrictCode" type="string">
+      <column length="8" name="cMrDistrictCode"/>
+    </property>
+    <property name="fmrContrSignDate" type="string">
+      <column length="8" name="fMrContrSignDate"/>
+    </property>
+    <property name="cmrTransSale" type="string">
+      <column length="1" name="cMrTransSale" not-null="true"/>
+    </property>
+    <property name="cmrTransCash" type="string">
+      <column length="1" name="cMrTransCash" not-null="true"/>
+    </property>
+    <property name="cmrTransGas" type="string">
+      <column length="1" name="cMrTransGas" not-null="true"/>
+    </property>
+    <property name="cmrTransService" type="string">
+      <column length="1" name="cMrTransService" not-null="true"/>
+    </property>
+    <property name="nmrFreqSettle" type="java.lang.Byte">
+      <column name="nMrFreqSettle" precision="2" scale="0"/>
+    </property>
+    <property name="cmrMcc" type="string">
+      <column length="4" name="cMrMCC"/>
+    </property>
+    <property name="cmrReqCashBack" type="java.lang.Character">
+      <column length="1" name="cMrReqCashBack"/>
+    </property>
+    <property name="cmrTransPreAutorization" type="java.lang.Character">
+      <column length="1" name="cMrTransPreAutorization"/>
+    </property>
+    <property name="cmrTransConfirmacion" type="java.lang.Character">
+      <column length="1" name="cMrTransConfirmacion"/>
+    </property>
+    <property name="cmrTransSalePoints" type="java.lang.Character">
+      <column length="1" name="cMrTransSalePoints"/>
+    </property>
+    <property name="cmrTransPoints" type="java.lang.Character">
+      <column length="1" name="cMrTransPoints"/>
+    </property>
+    <property name="cmrTransPropina" type="java.lang.Character">
+      <column length="1" name="cMrTransPropina"/>
+    </property>
+    <property name="cmrTransPagoService" type="java.lang.Character">
+      <column length="1" name="cMrTransPagoService"/>
+    </property>
+    <property name="cmrTransAnular" type="java.lang.Character">
+      <column length="1" name="cMrTransAnular"/>
+    </property>
+    <property name="cmrTransAnularPs" type="java.lang.Character">
+      <column length="1" name="cMrTransAnularPS"/>
+    </property>
+    <property name="cmrTransAnularSp" type="java.lang.Character">
+      <column length="1" name="cMrTransAnularSP"/>
+    </property>
+    <property name="cmrTransCierre" type="java.lang.Character">
+      <column length="1" name="cMrTransCierre"/>
+    </property>
+    <property name="cmrRucCode" type="string">
+      <column length="11" name="cMrRucCode"/>
+    </property>
+    <property name="cmrAdministratorKey" type="string">
+      <column length="64" name="cMrAdministratorKey"/>
+    </property>
+    <property name="cmrAccessType" type="java.lang.Character">
+      <column length="1" name="cMrAccessType"/>
+    </property>
+    <property name="cmrCloseType" type="java.lang.Character">
+      <column length="1" name="cMrCloseType"/>
+    </property>
+    <property name="cmrCloseTime" type="string">
+      <column length="6" name="cMrCloseTime"/>
+    </property>
+    <property name="cmrAccessTrx" type="java.lang.Character">
+      <column length="1" name="cMrAccessTrx"/>
+    </property>
+    <property name="cmrCardWriter" type="java.lang.Character">
+      <column length="1" name="cMrCardWriter"/>
+    </property>
+    <property name="cmrPropina" type="java.lang.Character">
+      <column length="1" name="cMrPropina"/>
+    </property>
+    <property name="cmrMoneyMult" type="java.lang.Character">
+      <column length="1" name="cMrMoneyMult"/>
+    </property>
+    <property name="cmrLastNumber" type="java.lang.Character">
+      <column length="1" name="cMrLastNumber"/>
+    </property>
+    <property name="cmrReqDni" type="java.lang.Character">
+      <column length="1" name="cMrReqDNI"/>
+    </property>
+    <property name="cmrLimitAmount" type="big_decimal">
+      <column name="cMrLimitAmount" precision="12"/>
+    </property>
+    <property name="cmrSaldoAmount" type="big_decimal">
+      <column name="cMrSaldoAmount" precision="12"/>
+    </property>
+    <property name="cmrVoidKey" type="string">
+      <column length="16" name="cMrVoidKey"/>
+    </property>
+    <property name="cmrSettleKey" type="string">
+      <column length="16" name="cMrSettleKey"/>
+    </property>
+    <property name="cmrPaymentKey" type="string">
+      <column length="16" name="cMrPaymentKey"/>
+    </property>
+    <property name="cmrDigitKey" type="string">
+      <column length="16" name="cMrDigitKey"/>
+    </property>
+    <property name="cmrNetBin" type="string">
+      <column length="6" name="cMrNetBin"/>
+    </property>
+    <property name="cmrOperatorReq" type="string">
+      <column length="1" name="cMrOperatorReq"/>
+    </property>
+    <property name="cmrValOperator" type="string">
+      <column length="1" name="cMrValOperator"/>
+    </property>
+    <property name="cmrLimitAmountDollar" type="big_decimal">
+      <column name="cMrLimitAmountDollar" precision="12"/>
+    </property>
+    <property name="cmrSaldoAmountDollar" type="big_decimal">
+      <column name="cMrSaldoAmountDollar" precision="12"/>
+    </property>
+    <property name="cmrModifyUser" type="string">
+      <column length="7" name="cMrModifyUser"/>
+    </property>
+    <property name="fmrModifyDate" type="string">
+      <column length="8" name="fMrModifyDate"/>
+    </property>
+    <property name="hmrModifyTime" type="string">
+      <column length="6" name="hMrModifyTime"/>
+    </property>
+    <property name="cmrDownloadProfile" type="long">
+      <column name="cMrDownloadProfile" not-null="true"/>
+    </property>
+    <property name="cmrForceUpdate" type="java.lang.Character">
+      <column length="1" name="cMrForceUpdate"/>
+    </property>
+    <property name="cmrLogicalStatus" type="java.lang.Character">
+      <column length="1" name="cMrLogicalStatus"/>
+    </property>
+    <property name="cmrConfigKey" type="string">
+      <column length="16" name="cMrConfigKey"/>
+    </property>
+    <set inverse="true" name="tmTerminals">
+      <key>
+        <column length="15" name="cTrMerchantId" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TmTerminal"/>
+    </set>
+  </class>
+</hibernate-mapping>

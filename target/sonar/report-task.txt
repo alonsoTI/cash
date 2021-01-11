@@ -1,0 +1,6 @@
+projectKey=pe.pichincha.services:portal-cash
+serverUrl=http://192.168.1.76:9000
+serverVersion=8.6.0.39681
+dashboardUrl=http://192.168.1.76:9000/dashboard?id=pe.pichincha.services%3Aportal-cash
+ceTaskId=AXbe2gmCCUxDH2gnoPaT
+ceTaskUrl=http://192.168.1.76:9000/api/ce/task?id=AXbe2gmCCUxDH2gnoPaT

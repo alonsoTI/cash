@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmTariff" schema="dbo" table="tmTariff">
+    <id name="ctfTariffId" type="string">
+      <column length="50" name="cTfTariffID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="ftfAplicDate" type="string">
+      <column length="50" name="fTfAplicDate" not-null="true"/>
+    </property>
+    <property name="ctfApplicationId" type="string">
+      <column length="20" name="cTfApplicationID" not-null="true"/>
+    </property>
+    <property name="ctfCurrency" type="string">
+      <column length="20" name="cTfCurrency" not-null="true"/>
+    </property>
+    <property name="ctfDescription1" type="string">
+      <column length="70" name="cTfDescription1"/>
+    </property>
+    <property name="ntfAmount1" type="big_decimal">
+      <column name="nTfAmount1" precision="12"/>
+    </property>
+    <property name="ctfDescription2" type="string">
+      <column length="70" name="cTfDescription2"/>
+    </property>
+    <property name="ntfAmount2" type="big_decimal">
+      <column name="nTfAmount2" precision="12"/>
+    </property>
+    <property name="ctfDescription3" type="string">
+      <column length="70" name="cTfDescription3"/>
+    </property>
+    <property name="ntfAmount3" type="big_decimal">
+      <column name="nTfAmount3" precision="12"/>
+    </property>
+    <property name="ctfDescription4" type="string">
+      <column length="70" name="cTfDescription4"/>
+    </property>
+    <property name="ntfAmount4" type="big_decimal">
+      <column name="nTfAmount4" precision="12"/>
+    </property>
+    <property name="ctfDeniedAmount" type="big_decimal">
+      <column name="cTfDeniedAmount" precision="12"/>
+    </property>
+    <property name="ctfModifyUser" type="string">
+      <column length="7" name="cTfModifyUser"/>
+    </property>
+    <property name="ftfModifyDate" type="string">
+      <column length="8" name="fTfModifyDate"/>
+    </property>
+    <property name="htfModifyTime" type="string">
+      <column length="6" name="hTfModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

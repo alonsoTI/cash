@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmDownloadProfile" schema="dbo" table="tmDownloadProfile">
+    <id name="cdpprofileId" type="long">
+      <column name="cDPProfileID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="ddpprofileName" type="string">
+      <column length="30" name="dDPProfileName" not-null="true" unique="true"/>
+    </property>
+    <property name="ddpdescription" type="string">
+      <column name="dDPDescription" not-null="true"/>
+    </property>
+    <property name="cdpversioId" type="java.lang.Long">
+      <column name="cDPVersioID"/>
+    </property>
+    <property name="hdpdownloadTime" type="string">
+      <column length="6" name="hDPDownloadTime" not-null="true"/>
+    </property>
+    <property name="fdpaplicDate" type="string">
+      <column length="8" name="fDPAplicDate" not-null="true"/>
+    </property>
+    <property name="hdptoleranceDwnTime" type="string">
+      <column length="6" name="hDPToleranceDwnTime"/>
+    </property>
+    <property name="cdpmodifyUser" type="string">
+      <column length="7" name="cDPModifyUser"/>
+    </property>
+    <property name="fdpmodifyDate" type="string">
+      <column length="8" name="fDPModifyDate"/>
+    </property>
+    <property name="hdpmodifyTime" type="string">
+      <column length="6" name="hDPModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

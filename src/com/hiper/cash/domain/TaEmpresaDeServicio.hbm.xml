@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaEmpresaDeServicio" schema="dbo" table="taEmpresaDeServicio">
+    <id name="cesid" type="int">
+      <column name="cESId"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="desnombre" type="string">
+      <column length="100" name="dESNombre"/>
+    </property>
+    <property name="cesgrupo" type="string">
+      <column length="2" name="cESGrupo"/>
+    </property>
+    <property name="cflagOffLine" type="java.lang.Character">
+      <column length="1" name="cFlagOffLine"/>
+    </property>
+    <property name="desaccion" type="string">
+      <column length="100" name="dESAccion"/>
+    </property>
+  </class>
+</hibernate-mapping>

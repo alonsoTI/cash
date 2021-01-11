@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmTipoPago" schema="dbo" table="tmTipoPago">
+    <id name="ctpaIdTipoPago" type="string">
+      <column length="5" name="cTPaIdTipoPago"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dtpaDescripcion" type="string">
+      <column length="50" name="dTPaDescripcion"/>
+    </property>
+    <property name="ctpaModoProceso" type="char">
+      <column length="1" name="cTPaModoProceso" not-null="true"/>
+    </property>
+    <property name="ctpaEstado" type="char">
+      <column length="1" name="cTPaEstado" not-null="true"/>
+    </property>
+    <property name="ctpaFlagReqBanco" type="java.lang.Character">
+      <column length="1" name="cTPaFlagReqBanco"/>
+    </property>
+    <property name="ctpaModifyUser" type="string">
+      <column length="7" name="cTPaModifyUser"/>
+    </property>
+    <property name="ftpaModifyDate" type="string">
+      <column length="8" name="fTPaModifyDate"/>
+    </property>
+    <property name="htpaModifyTime" type="string">
+      <column length="6" name="hTPaModifyTime"/>
+    </property>
+    <property name="ctpaFlagMostrarVentanilla" type="java.lang.Character">
+      <column length="1" name="cTPaFlagMostrarVentanilla"/>
+    </property>
+    <set inverse="true" name="taTipoPagoServicios">
+      <key>
+        <column length="5" name="cTPaIdTipoPago" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaTipoPagoServicio"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmApplication" schema="dbo" table="tmApplication">
+    <id name="capApplicationId" type="string">
+      <column length="20" name="cApApplicationID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dapApplicationName" type="string">
+      <column length="50" name="dApApplicationName"/>
+    </property>
+    <property name="dapApplicationFlow" type="string">
+      <column length="50" name="dApApplicationFlow"/>
+    </property>
+    <property name="napApplicationFlowSize" type="java.lang.Long">
+      <column name="nApApplicationFlowSize"/>
+    </property>
+    <property name="capModifyUser" type="string">
+      <column length="7" name="cApModifyUser"/>
+    </property>
+    <property name="fapModifyDate" type="string">
+      <column length="8" name="fApModifyDate"/>
+    </property>
+    <property name="hapModifyTime" type="string">
+      <column length="6" name="hApModifyTime"/>
+    </property>
+    <set inverse="true" name="taTerminalApplications">
+      <key>
+        <column length="20" name="cTAApplicationID" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaTerminalApplication"/>
+    </set>
+  </class>
+</hibernate-mapping>

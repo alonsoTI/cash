@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TxBatch" schema="dbo" table="txBatch">
+    <composite-id class="com.hiper.cash.domain.TxBatchId" name="id">
+      <key-property name="cbtMerchantId" type="string">
+        <column length="15" name="cBtMerchantId"/>
+      </key-property>
+      <key-property name="cbtTerminalNum" type="string">
+        <column length="4" name="cBtTerminalNum"/>
+      </key-property>
+      <key-property name="cbtBatchId" type="string">
+        <column length="8" name="cBtBatchId"/>
+      </key-property>
+      <key-property name="cbtAplicacion" type="string">
+        <column length="20" name="cBtAplicacion"/>
+      </key-property>
+    </composite-id>
+    <property name="cbtStatus" type="string">
+      <column length="1" name="cBtStatus" not-null="true"/>
+    </property>
+    <property name="cbtSettleId" type="string">
+      <column length="8" name="cBtSettleId" not-null="true"/>
+    </property>
+    <property name="fbtCreationDate" type="string">
+      <column length="8" name="fBtCreationDate" not-null="true"/>
+    </property>
+    <property name="hbtCreationHour" type="string">
+      <column length="6" name="hBtCreationHour" not-null="true"/>
+    </property>
+    <property name="nbtTxnNumber" type="short">
+      <column name="nBtTxnNumber" not-null="true" precision="4" scale="0"/>
+    </property>
+    <property name="nbtTotalAmount" type="big_decimal">
+      <column name="nBtTotalAmount" not-null="true" precision="12"/>
+    </property>
+    <property name="nbtVoidTxnNum" type="short">
+      <column name="nBtVoidTxnNum" not-null="true" precision="4" scale="0"/>
+    </property>
+    <property name="nbtVoidTotAmount" type="big_decimal">
+      <column name="nBtVoidTotAmount" not-null="true" precision="12"/>
+    </property>
+    <property name="cbtModifyUser" type="string">
+      <column length="7" name="CbtModifyUser"/>
+    </property>
+    <property name="cbtModifyDate" type="string">
+      <column length="8" name="cBtModifyDate"/>
+    </property>
+    <property name="cbtModifyTime" type="string">
+      <column length="6" name="cBtModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

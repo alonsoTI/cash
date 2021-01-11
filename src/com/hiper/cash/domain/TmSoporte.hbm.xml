@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmSoporte" schema="dbo" table="tmSoporte">
+    <id name="csoId" type="int">
+      <column name="cSoId"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dsoNombre" type="string">
+      <column length="100" name="dSoNombre"/>
+    </property>
+    <property name="nsoTelefono" type="string">
+      <column length="15" name="nSoTelefono"/>
+    </property>
+    <property name="nsoAnexo" type="string">
+      <column length="4" name="nSoAnexo"/>
+    </property>
+    <property name="nsoMovil" type="string">
+      <column length="15" name="nSoMovil"/>
+    </property>
+    <property name="dsoEmail" type="string">
+      <column length="40" name="dSoEmail"/>
+    </property>
+  </class>
+</hibernate-mapping>

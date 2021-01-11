@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="listaordenform" type="com.hiper.cash.forms.ListaOrdenForm"/>
+        <form-bean name="cargaonlineform" type="com.hiper.cash.forms.CargaOnlineForm"/>
+        <form-bean name="ordenform" type="com.hiper.cash.forms.OrdenForm"/>
+        <form-bean name="transferenciasform" type="com.hiper.cash.forms.TransferenciasForm" />
+        <form-bean name="consultasaldosform" type="com.hiper.cash.forms.ConsultaSaldosForm"/>
+        <form-bean name="pagodinnersform" type="com.hiper.cash.forms.PagoDinnersForm"/>
+        <form-bean name="consultaordenesform" type="com.hiper.cash.forms.ConsultaOrdenesForm"/>
+        <form-bean name="aprobacionordenform" type="com.hiper.cash.forms.AprobacionOrdenForm"/>
+        <form-bean name="letrasform" type="com.hiper.cash.forms.LetrasForm"/>
+        <form-bean name="pagoservform" type="com.hiper.cash.forms.PagoServicioForm"/>
+        <form-bean name="administracionform" type="com.hiper.cash.forms.AdministracionForm"/>
+        <form-bean name="proveedorform" type="com.hiper.cash.forms.ProveedorForm"/>
+        <form-bean name="personalform" type="com.hiper.cash.forms.PersonalForm"/>
+        <form-bean name="fileform" type="com.hiper.cash.forms.FileUploadForm" />
+        <form-bean name="InputForm" type="com.financiero.cash.form.InputForm" />        
+		<form-bean name="historicoForm" type="com.financiero.cash.form.HistoricosForm" />
+		<form-bean name="loginform" type="com.hiper.cash.forms.LoginForm"/>
+		<form-bean name="cTransferenciasForm" type="com.financiero.cash.form.consultas.TransferenciasForm" />		
+    </form-beans>
+    
+    <global-exceptions>
+        <exception key="message.java.lang.RuntimeException" path="/error1.jsp" type="java.lang.RuntimeException" />
+        <exception key="message.java.lang.RuntimeException" path="/error1.jsp" type="java.lang.ExceptionInInitializerError"/>
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+        <forward name="error" path="/error.jsp"/>
+        <forward name="fueraServicio" path="/successServicio.jsp" />
+        <forward name="formatoCCI" path="/cargarArchivo.do?do=formatoCCI"/>
+        <forward name="formatoCTS" path="/cargarArchivo.do?do=formatoCTS"/>        
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        <!-- Struts Layout action -->
+        <action
+            path="/sort"
+            type="fr.improve.struts.taglib.layout.sort.SortAction"
+            scope="request"
+            validate="false" />
+        <action
+            path="/treeview"
+            type="fr.improve.struts.taglib.layout.treeview.TreeviewAction"
+            scope="request"
+            validate="false" />
+
+        <!-- esilva -->
+        <action path="/mantenerOrdenes" type="com.hiper.cash.actions.MantenerOrdenesAction" parameter="do" name="listaordenform" unknown="false" >
+          <forward name="nuevo" path="/nuevoOrden.jsp"/>
+          <forward name="modificar" path="/modificarOrden.jsp"/>
+          <forward name="cargarEliminar" path="/eliminarOrden.jsp"/>
+          <forward name="cargarCancelar" path="/cancelarOrden.jsp"/>
+
+          <forward name="guardar" path="/mantenerRoles.do?do=cargar"/>
+          <forward name="eliminar" path="/success.jsp"/>
+          <forward name="cargaOnline" path="/cargaOnline.do"/>
+          <forward name="cargaFile" path="/cargaFile.jsp"/>
+          <forward name="error" path="/error.jsp"/>
+        </action>        
+        <action path="/Orden" type="com.hiper.cash.actions.OrdenAction" parameter="do" name="ordenform" unknown="false">
+          <forward name="modificar" path="/modOrden.jsp"/>
+          <forward name="cancelar" path="/canOrden.jsp"/>
+          <!--  <forward name="eliminarItems" path="/modOrden.jsp"/> -->
+          <forward name="guardar" path="/Orden.do?do=sendmail"/>
+          <forward name="success" path="/successCancelacion.jsp"/>
+          <forward name="error" path="/error.jsp"/>
+        </action>
+        <!-- jyamunaque - Ini -->
+        <action path="/Orden" type="com.hiper.cash.actions.OrdenAction" parameter="do" name="ordenform" unknown="false">
+          <forward name="modificar" path="/modOrden.jsp"/>
+          <forward name="cancelar" path="/canOrden.jsp"/>
+          <forward name="guardar" path="/Orden.do?do=sendmail"/>
+          <forward name="success" path="/successCancelacion.jsp"/>
+          <forward name="error" path="/error.jsp"/>
+        </action>
+        <action path="/cargaOnline" type="com.hiper.cash.actions.CargaOnlineAction" parameter="do" name="ordenform" unknown="false">
+          <forward name="view" path="/cargaOnline.jsp"/>
+          <forward name="error" path="/login.jsp" />
+        </action>
+        <!-- jmoreno -->
+        <action path="/cargarArchivo" type="com.hiper.cash.actions.cargarArchivoAction" parameter="do" name="fileform" unknown="false">
+          <forward name="subirFile" path="/cargaFile.jsp"/>
+          <forward name="resultadoFile" path="/cargas/resultadoFile.jsp"/>
+          <forward name="getResultadoFile" path="/cargarArchivo.do?do=resultadoFile"/>
+          <forward name="formatoCTS" path="/formatoCTS.jsp"/>
+          <forward name="formatoCCI" path="/cargas/formatoPagoCCI.jsp"/>
+        </action>
+		<action path="/transferencias" type="com.hiper.cash.actions.TransferenciasAction" parameter="do" name="transferenciasform" unknown="false" >          	
+          	<forward name="success" path="/success.jsp"/>          	
+          	<forward name="imprTransferencia" path="/transferencias/imprTransferencia.jsp"/>
+          	<forward name="confirm" path="/confirm.jsp"/>
+          	<forward name="iniciarTCP" path="/transferencias/transferenciaCP.jsp"/>           
+          	<forward name="iniciarTCT" path="/transferencias/transferenciaCT.jsp"/>
+          	<forward name="iniciarTIT" path="/transferencias/transferenciaIT.jsp"/>             	
+          	<forward name="confirmarTCP" path="/transferencias/procesaTrx.jsp"/>
+          	<forward name="procesarTCP" path="/transferencias/procesaTrx.jsp"/>          	
+          	<forward name="noPermiso" path="/permiso.jsp"/>
+          	<forward name="iniciarOpciones" path="/login.do?do=obtenerOpcionesEmpresas"/>  	
+          	
+          	
+        </action>
+        <action path="/cTransferencias" type="com.financiero.cash.action.ConsultarTransferenciasAction" parameter="do" name="cTransferenciasForm" unknown="false" >        	
+        	<forward name="consultarTransferencias" path="/transferencias/consultaTransferencias.jsp"/>    	        	
+        	<forward name="cargarTrxPendientes" path="/transferencias/trxPendientes.jsp"/>
+        	<forward name="verTrxPendiente" path="/transferencias/procesaTrx.jsp"/>
+        	<forward name="verTrxActualizada" path="/transferencias/procesaTrx.jsp"/>    
+        	
+        	<!-- 
+        	<forward name="verTrxActualizadaAprobacion" path="/transferencias/procesaTrxAprobacion.jsp"/>
+        	 -->   
+        	   
+        	<forward name="noPermiso" path="/permiso.jsp"/>  	
+        	<forward name="impresionHtml" path="/transferencias/transferenciaImpresion.jsp"/>
+        	<forward name="iniciarOpciones" path="/login.do?do=obtenerOpcionesEmpresas"/>
+        </action>
+        <action path="/aprobaciones" type="com.hiper.cash.actions.AprobacionesAction" parameter="do" name="aprobacionordenform" unknown="false">
+        	<forward name="cargarAprobaciones" path="/aprobacionOrdenes.jsp"/>
+          	<forward name="cargarDetalleOrdenes" path="/detalleOrdenes.jsp"/>
+          	<forward name="cargarSuccess" path="/success.jsp"/>
+          	<forward name="error" path="/error.jsp"/>
+        </action>
+        <action path="/letras" type="com.hiper.cash.actions.LetrasAction" parameter="do" name="letrasform" unknown="false">
+          <forward name="cargarConsulta" path="/consultaLetras.jsp"/>
+          <forward name="mostrarDetalle" path="/mostrarLetras.jsp"/>
+
+          <forward name="cargarPreliquidacion" path="/preLiqPlanilla.jsp"/>
+          <forward name="preLiqConsulta" path="/preLiqPlanilla.jsp"/>
+          <forward name="mostrarDetalleLiq" path="/preLiqDetPlanilla.jsp"/>
+          <forward name="consultaPreLiqLetxCan" path="/preLiqLetxCanc.jsp"/>
+          <forward name="mostrarPreLiqLetxRenv" path="/preLiqLetxRenov.jsp"/>
+
+          <forward name="cargarCancelacion" path="/cancelacionConsPlan.jsp"/>
+          <forward name="cancelarConsulta" path="/cancelacionConsPlan.jsp"/>
+          <forward name="mostrarDetalleCan" path="/cancelacionDetPlan.jsp"/>
+          <forward name="consultaCancelacionLet" path="/cancelacionLetras.jsp"/>
+          <forward name="confirmarCancelacion" path="/cancelacionLetConfirm.jsp"/>
+
+          <forward name="noPermiso" path="/permiso.jsp"/>
+        </action>
+
+
+        <action path="/login" type="com.hiper.cash.actions.AutenticarAction" parameter="do" 
+        	name="loginform" unknown="false"  scope="request">
+          <!--forward name="inicio" path="/menuFlex.jsp"/-->
+          <forward name="inicio" path="/animacionFlash.jsp"/>
+          <forward name="loguot" path="/login.jsp"/>          
+          <forward name="cambioPass" path="/cambioClave.jsp"/>
+          <forward name="creaClave" path="/creaClave.jsp"/>
+          <forward name="error" path="/login.jsp"/>
+          <!--  
+          original
+           <forward name="iniciarOpciones" path="/login.do?do=obtenerOpcionesEmpresas"/>
+           -->
+           
+           <!--  CAPTURA DE DATOS DE USUARIOS    -->
+           <!--
+           <forward name="iniciarCapturaDatos" path="/login.do?do=iniciarCapturaDatosUsuario"/>
+           <forward name="registrarDatosUsuario" path="/registroDatosUsuario.jsp"/>   
+           -->
+          <forward name="iniciarOpciones" path="/login.do?do=iniciarCapturaDatosUsuario"/>
+          <forward name="registrarDatosUsuario" path="/registroDatosUsuario.jsp"/>
+          
+          <forward name="iniciarOpcionesComun" path="/login.do?do=obtenerOpcionesEmpresas"/>
+          
+          <!-- FIN CAPTURA DE DATOS DE USUARIOS    -->
+          
+          
+          
+          <!-- PROCESO DE VALIDACION DE USUARIOS -->          
+          
+          		<forward name="registrarMigracionUsuario" path="/registrarMigracionUsuario.jsp"/>
+          		
+          		<forward name="redireccionarNuevoCash" path="/redireccionarNuevoCash.jsp"/>
+          
+           <!-- END PROCESO DE VALIDACION DE USUARIOS -->
+           
+           
+           
+          
+          <forward name="opciones" path="/opcionesEmpresa.jsp"/>
+          <forward name="menu" path="/menuFlex1.jsp"/>
+          <forward name="iniciarCoordenada" path="/login/mostrarTCO.jsp"/>
+          <forward name="errorCoordenada" path="/login/errorTCO.jsp"/>
+          
+          <forward name="cargaCreaClave" path="/generaClave.jsp"/>          
+          <forward name="cargaCreaClave2" path="/generaClaveMensaje.jsp"/>
+          
+                
+          
+        </action>
+
+       <!-- jwong 16/11/2008 manejo de la consulta de saldos -->
+        <action path="/consultarSaldos" type="com.hiper.cash.actions.ConsultaSaldosAction" parameter="do" name="consultasaldosform" unknown="false">
+          <forward name="cargarSaldos" path="/consultaSaldos.jsp"/>
+          <forward name="cargarHisMov" path="/consultaMovHistorico.jsp"/>
+          <forward name="cargarSaldosPromedios" path="/saldosPromedios.jsp"/>
+          <forward name="cargarRelacionesBco" path="/relacionesBanco.jsp"/>
+          <forward name="cargarCodIntBco" path="/codigoInterbancario.jsp"/>
+          <forward name="error" path="/error.jsp"/>
+
+          <forward name="exportarSaldos" path="/exportarSaldos.jsp"/>
+          <forward name="exportarHistoricoMov" path="/exportarHistoricoMov.jsp"/>
+          <forward name="exportarSaldosPromedios" path="/exportarSaldosPromedios.jsp"/>
+          <forward name="exportarRelacionesBco" path="/exportarRelacionesBco.jsp"/>
+          <forward name="exportarCodIntBco" path="/exportarCodIntBco.jsp"/>
+          <forward name="exportarMovimientos" path="/exportarMovimientos.jsp"/>
+          
+          
+          
+          <forward name="iniciaCronograma" path="/consultas/relBanCronograma.jsp"/> 
+          <forward name="paginaCronograma" path="/consultas/relBanCronograma.jsp"/>  
+          <forward name="buscarLiquidador" path="/consultas/relBanLiquidador.jsp"/>	          
+          <forward name="exportarCronograma" path="/consultas/relBanCronogramaExport.jsp"/>
+          <forward name="exportarLiquidador" path="/consultas/relBanLiquidadorExport.jsp"/>
+          
+        </action>
+
+        <!-- jwong 07/12/2008 manejo de comprobantes -->
+        <action path="/comprobantes" type="com.hiper.cash.actions.ComprobantesAction" parameter="do" name="consultaordenesform" unknown="true">
+          <forward name="cargarConsultasOrdenes" path="/comprobantes/ordenes.jsp"/>
+          <forward name="cargarDetalleOrdenes" path="/detalleOrdenes.jsp"/>
+          <forward name="exportarDetOrdenes" path="/exportarConsultaOrdenes.jsp"/>
+          
+          <forward name="paginadoOrdenes" path="/comprobantes/ordenes.jsp"/>   
+          <forward name="exportaOrdenes" path="/comprobantes/ordenesExp.jsp"/>
+          
+          <forward name="paginadoDetallesOrden" path="/comprobantes/detallesOrden.jsp"/>   
+          <forward name="exportaDetallesOrden" path="/comprobantes/detallesOrdenExp.jsp"/>
+          <forward name="transferencia" path="/comprobantes/transferencia.jsp"/>
+          <forward name="cargarConsultaDetalles" path="/consultaDetalles.jsp"/>
+          <forward name="mostrarConsEstado" path="/consultaEstado.jsp"/>
+          <forward name="exportarConsEstado" path="/exportarConsultaEstado.jsp"/>
+          <forward name="error" path="/error.jsp"/>
+          <forward name="mostrarAprobadores" path="/aprobaciones.jsp"/>
+          <forward name="pagoServicio" path="/comprobantes/pagoServicio.jsp"/>
+        </action>
+
+        <!-- jwong 09/12/2008 manejo del tipo de camnbio -->
+        <action path="/tipoCambio" type="com.hiper.cash.actions.TipoCambioAction" parameter="do" unknown="false">
+          <forward name="cargarTipoCambio" path="/tipoCambio.jsp"/>
+          <forward name="error" path="/error.jsp"/>
+        </action>
+      
+       
+
+        <!-- jwong 16/11/2008 manejo de pago tarjeta dinners -->
+        <action path="/pagoDinners" type="com.hiper.cash.actions.PagoDinnersAction" parameter="do" name="pagodinnersform" unknown="false">
+          <forward name="cargar" path="/dinners.jsp"/>
+          <forward name="error" path="/error.jsp"/>
+        </action>
+
+        <action path="/pagoServicio" type="com.hiper.cash.actions.PagoServicioAction" parameter="do" name="pagoservform" unknown="false">
+          <forward name="success" path="/success.jsp"/>
+          <forward name="imprPagoServicio" path="/servicios/imprPagoServicio.jsp"/>        
+          <forward name="pagoServicio" path="/servicios/pagoServicio.jsp"/>          
+          <forward name="cargarProveedor" path="/consultaProveedor.jsp"/>
+		  <forward name="cargarPagoSedapal" path="/pagoSedapal.jsp"/>
+          <forward name="cargarDetallePagoSedapal" path="/detallePagoSedapal.jsp"/>
+		  <forward name="cargarPagoOnLine" path="/pagoOnLine.jsp"/>
+          <forward name="cargarPagoDetalleOnLine" path="/detallePagoOnLine.jsp"/>
+          <forward name="cargarPagoClaro" path="/pagoClaro.jsp"/>
+          <forward name="cargarDetallePagoClaro" path="/detallePagoClaro.jsp"/>
+		  <forward name="cargarPagoOffLine" path="/pagoOffLine.jsp"/>
+          <forward name="cargarPagoDetalleOffLine" path="/pagoDetalleOffLine.jsp"/>         
+          
+          <forward name="error" path="/error.jsp"/>
+          
+        </action>
+
+       <!-- jwong 20/01/2009 manejo de administracion(consulta) -->
+        <action path="/administracion" type="com.hiper.cash.actions.AdministracionAction" parameter="do" name="administracionform" unknown="false" scope="request">
+          <forward name="cargarMantProveedor" path="/mantenimientoProveedores.jsp"/>
+          <forward name="cargarMantPersonal" path="/mantenimientoPersonal.jsp"/>
+          <forward name="error" path="/error.jsp"/>
+
+          <forward name="cargarManual" path="/manualCash.jsp"/>
+          <forward name="cargarDemo" path="/demoCash.jsp"/>
+          <forward name="cargarSoporte" path="/soporteCash.jsp"/>
+
+          <forward name="cargarCambioClave" path="/cambioClave.jsp"/>
+		  <forward name="cargarDescargas" path="/administracionDescarga.jsp"/>
+        </action>
+
+        <!-- jwong 22/01/2009 mantenimiento de proveedores -->
+        <action path="/proveedor" type="com.hiper.cash.actions.AdministracionAction" parameter="do" name="proveedorform" unknown="false">
+          <forward name="nuevoProveedor" path="/nuevoProveedor.jsp"/>
+          <forward name="cargarNuevoProveedor" path="/proveedor.do?do=nuevoProveedor"/>
+          <forward name="modificarProveedor" path="/modificarProveedor.jsp"/>
+          <forward name="cargarProveedor" path="/administracion.do?do=cargarMantenimientoProveedor"/>
+          <forward name="success" path="/success.jsp" />
+          <forward name="error" path="/error.jsp"/>
+        </action>
+        
+        <action path="/personal" type="com.hiper.cash.actions.AdministracionAction" parameter="do" name="personalform" unknown="false" scope="request">
+          <forward name="nuevoPersonal" path="/nuevoPersonal.jsp"/>
+          <forward name="modificarPersonal" path="/modificarPersonal.jsp"/>
+          <forward name="cargarPersonal" path="/administracion.do?do=cargarMantenimientoPersonal"/>
+          <forward name="success" path="/success.jsp" />
+          <forward name="error" path="/error.jsp"/>
+        </action>
+        
+        <action path="/comercioExterior" type="com.hiper.cash.actions.ComercioExteriorAction" parameter="do" unknown="false">
+          <forward name="cargarConsultaComExt" path="/consultaOperacionComExt.jsp"/>
+          <forward name="error" path="/error.jsp"/>
+        </action>
+		
+		 <action path="/historicos" type="com.financiero.cash.action.HistoricosAction"
+         			parameter="do" unknown="false" name="historicoForm">
+         	 <forward name="cargarEmpresas" path="/historicos/historicos.jsp"/>
+         	 <forward name="paginaOrdenes" path="/historicos/historicos.jsp"/>		
+			 <forward name="exportaOrdenes" path="/historicos/historicosExp.jsp"/>		
+		     <forward name="paginaDetallesOrden" path="/historicos/historicosDetalle.jsp"/>		
+		     <forward name="exportaDetallesOrden" path="/historicos/historicosDetalleExp.jsp"/>			          	 		
+        </action>
+		
+ <!-- HISTORICOS ANDY -->   
+        
+          <action input="/h_historicos.jsp" parameter="method" name="InputForm" path="/inputAction" scope="session" type="com.financiero.cash.action.InputAction">
+            <forward name="success" path="/h_historicos.jsp" />
+        </action>
+        
+
+        <action input="/h_servicios.jsp" parameter="method" name="InputForm" path="/servicioAction" scope="session" type="com.financiero.cash.action.ServicioAction">
+            <forward name="success" path="/h_servicios.jsp" />
+        </action>
+
+        <action input="/h_ordenes.jsp" parameter="method" name="InputForm" path="/ordenesAction" scope="session" type="com.financiero.cash.action.OrdenesAction">
+            <forward name="success" path="/h_ordenes.jsp" />
+        </action>
+
+        <action input="/h_detalles.jsp" parameter="method" name="InputForm" path="/detallesAction" scope="session" type="com.financiero.cash.action.DetallesAction">
+            <forward name="success" path="/h_detalles.jsp" />
+        </action>
+        
+        <!-- HISTORICOS  -->		
+        
+
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+    <!-- Controller for Struts Layout -->
+    <!--<controller processorClass="fr.improve.struts.taglib.layout.workflow.LayoutRequestProcessor"/>-->
+
+    <message-resources parameter="CashResource"/>    
+    
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

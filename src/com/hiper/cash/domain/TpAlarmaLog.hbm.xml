@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TpAlarmaLog" schema="dbo" table="tpAlarmaLog">
+    <composite-id class="com.hiper.cash.domain.TpAlarmaLogId" name="id">
+      <key-property name="fecha" type="string">
+        <column length="8" name="Fecha"/>
+      </key-property>
+      <key-property name="secuencia" type="string">
+        <column length="10" name="Secuencia"/>
+      </key-property>
+      <key-property name="codigo" type="string">
+        <column length="10" name="Codigo"/>
+      </key-property>
+    </composite-id>
+    <property name="hora" type="string">
+      <column length="6" name="Hora" not-null="true"/>
+    </property>
+    <property name="codError" type="string">
+      <column length="10" name="CodError"/>
+    </property>
+    <property name="valorCritico" type="string">
+      <column length="10" name="ValorCritico"/>
+    </property>
+    <property name="numTerminal" type="string">
+      <column length="8" name="NumTerminal" not-null="true"/>
+    </property>
+    <property name="codAgencia" type="string">
+      <column length="15" name="CodAgencia" not-null="true"/>
+    </property>
+    <property name="estadoAlarma" type="string">
+      <column length="1" name="EstadoAlarma"/>
+    </property>
+    <property name="estadoEnvio" type="string">
+      <column length="1" name="EstadoEnvio"/>
+    </property>
+    <property name="descripcion" type="string">
+      <column name="Descripcion"/>
+    </property>
+    <property name="fechaAtencion" type="string">
+      <column length="8" name="FechaAtencion"/>
+    </property>
+    <property name="horaAtencion" type="string">
+      <column length="6" name="HoraAtencion"/>
+    </property>
+  </class>
+</hibernate-mapping>

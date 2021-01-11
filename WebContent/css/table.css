@@ -1,0 +1,53 @@
+/* 
+    Documento   	: table.css
+    Fecha Creacion 	: 05/06/2011, 12:17:24 PM
+    Author     		: Rony Villanueva
+    Descripcion		: Hoja de estilos para el manejo de dos colores en las
+    				  tablas. 
+        
+*/
+
+#ver-zebra
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+    width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+#ver-zebra th
+{
+	font-size: 12px;
+	font-weight: normal;
+	padding: 5px 6px;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	color: #039;
+}
+#ver-zebra td
+{
+	padding: 6px 12px;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid #fff;
+}
+.vzebra-odd
+{
+	background: #eff2ff;
+}
+.vzebra-even
+{
+	background: #e8edff;
+}
+#ver-zebra #vzebra-adventure, #ver-zebra #vzebra-children
+{
+	background: #d0dafd;
+	border-bottom: 1px solid #c8d4fd;
+}
+#ver-zebra #vzebra-comedy, #ver-zebra #vzebra-action
+{
+	background: #dce4ff;
+	border-bottom: 1px solid #d6dfff;
+}

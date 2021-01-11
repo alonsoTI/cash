@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaDetalleFormato" schema="dbo" table="taDetalleFormato">
+    <composite-id class="com.hiper.cash.domain.TaDetalleFormatoId" name="id">
+      <key-property name="cdfidFormato" type="int">
+        <column name="cDFIdFormato"/>
+      </key-property>
+      <key-property name="ndfposicionCampo" type="int">
+        <column name="nDFPosicionCampo"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TmFormato" fetch="select" insert="false" name="tmFormato" update="false">
+      <column name="cDFIdFormato" not-null="true"/>
+    </many-to-one>
+    <property name="ddfnombreCampo" type="string">
+      <column length="50" name="dDFNombreCampo" not-null="true"/>
+    </property>
+    <property name="ddftipoCampo" type="string">
+      <column length="20" name="dDFTipoCampo" not-null="true"/>
+    </property>
+    <property name="ndflongitudCampo" type="int">
+      <column name="nDFLongitudCampo" not-null="true"/>
+    </property>
+    <property name="ddfformatoCampo" type="string">
+      <column length="50" name="dDFFormatoCampo"/>
+    </property>
+    <property name="ddfvaloresCampo" type="string">
+      <column length="100" name="dDFValoresCampo"/>
+    </property>
+    <property name="ddfnombreCampoRef" type="string">
+      <column length="50" name="dDFNombreCampoRef"/>
+    </property>
+    <property name="ddfcondicional" type="string">
+      <column length="2" name="dDFCondicional"/>
+    </property>
+    <property name="ddfvaloresCond" type="string">
+      <column length="100" name="dDFValoresCond"/>
+    </property>
+    <property name="descripcion" type="string">
+      <column length="50" name="dDFDescripcion"/>
+    </property>
+  </class>
+</hibernate-mapping>

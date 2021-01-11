@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaServicioxEmpresa" schema="dbo" table="taServicioxEmpresa">
+    <id name="csemIdServicioEmpresa" type="long">
+      <column name="cSEmIdServicioEmpresa"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="com.hiper.cash.domain.TmEmpresa" fetch="select" name="tmEmpresa">
+      <column length="15" name="cSEmIdEmpresa" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.hiper.cash.domain.TaTarifa" fetch="select" name="taTarifa">
+      <column name="cSEIdTarifa"/>
+    </many-to-one>
+    <many-to-one class="com.hiper.cash.domain.TmServicio" fetch="select" name="tmServicio" lazy="false">
+      <column length="2" name="cSEmIdServicio" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.hiper.cash.domain.TaMapaCampos" fetch="select" name="taMapaCampos">
+      <column name="cSEmIdMapaCampos"/>
+    </many-to-one>
+    <property name="fsemFechaInicio" type="string">
+      <column length="8" name="fSEmFechaInicio"/>
+    </property>
+    <property name="fsemFechaFin" type="string">
+      <column length="8" name="fSEmFechaFin"/>
+    </property>
+    <property name="dsemRenovacionAut" type="java.lang.Character">
+      <column length="1" name="dSEmRenovacionAut"/>
+    </property>
+    <property name="dsemMotivo" type="string">
+      <column length="15" name="dSEmMotivo"/>
+    </property>
+    <property name="dsemMoneda" type="string">
+      <column length="3" name="dSEmMoneda"/>
+    </property>
+    <property name="dsemTipoAprobacion" type="string">
+      <column length="32" name="dSEmTipoAprobacion"/>
+    </property>
+    <property name="nsemNumeroAprobadores" type="java.lang.Integer">
+      <column name="nSEmNumeroAprobadores"/>
+    </property>
+    <property name="csemEstado" type="char">
+      <column length="1" name="cSEmEstado" not-null="true"/>
+    </property>
+    <property name="dsemFormatoArchivo" type="string">
+      <column length="10" name="dSEmFormatoArchivo"/>
+    </property>
+    <property name="csemFlagPagoParcial" type="java.lang.Character">
+      <column length="1" name="cSEmFlagPagoParcial"/>
+    </property>
+    <property name="csemFlagEjecucion" type="java.lang.Character">
+      <column length="1" name="cSEmFlagEjecucion"/>
+    </property>
+    <property name="csemPeriodoCobro" type="java.lang.Character">
+      <column length="1" name="cSEmPeriodoCobro"/>
+    </property>
+    <property name="nsemMontoAbonado" type="big_decimal">
+      <column name="nSEmMontoAbonado" precision="18" scale="4"/>
+    </property>
+    <property name="fsemFechaVenc" type="string">
+      <column length="8" name="fSEmFechaVenc"/>
+    </property>
+    <property name="cseformatoEntrada" type="java.lang.Integer">
+      <column name="cSEFormatoEntrada"/>
+    </property>
+    <property name="cseformatoSalida" type="java.lang.Integer">
+      <column name="cSEFormatoSalida"/>
+    </property>
+    <property name="csemModifyUser" type="string">
+      <column length="7" name="cSEmModifyUser"/>
+    </property>
+    <property name="fsemModifyDate" type="string">
+      <column length="8" name="fSEmModifyDate"/>
+    </property>
+    <property name="hsemModifyTime" type="string">
+      <column length="6" name="hSEmModifyTime"/>
+    </property>
+    <property name="csemFlagAprobAut" type="java.lang.Character">
+      <column length="1" name="cSEmFlagAprobAut"/>
+    </property>
+    <property name="dsemDescripcion" type="string">
+      <column length="100" name="dSEmDescripcion"/>
+    </property>
+    <set inverse="true" name="tpDetalleCobroSinBds">
+      <key>
+        <column name="cDCoIdServicioEmpresa" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TpDetalleCobroSinBd"/>
+    </set>
+    <set inverse="true" name="taOrdens">
+      <key>
+        <column name="cOrIdServicioEmpresa" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaOrden"/>
+    </set>
+    <set inverse="true" name="taGlosaCobroSinBds">
+      <key>
+        <column name="cSEmIdServicioEmpresa" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaGlosaCobroSinBd"/>
+    </set>
+    <set inverse="true" name="taServicioEntidads">
+      <key>
+        <column name="cSEnIdServEmp" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaServicioEntidad"/>
+    </set>
+    <set inverse="true" name="taTipoPagoServicios">
+      <key>
+        <column name="cSEmIdServicioEmpresa" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaTipoPagoServicio"/>
+    </set>
+    <set inverse="true" name="taFuncionarioServicios">
+      <key>
+        <column name="cFSIdServEmp" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaFuncionarioServicio"/>
+    </set>
+    <set inverse="true" name="taAprobadorServicios">
+      <key>
+        <column name="cSEmIdServicioEmpresa" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaAprobadorServicio"/>
+    </set>
+    <set inverse="true" name="taCuentasServicioEmpresas">
+      <key>
+        <column name="cSEmIdServicioEmpresa" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaCuentasServicioEmpresa"/>
+    </set>            
+  </class>
+</hibernate-mapping>

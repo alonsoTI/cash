@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/12/2009 01:49:55 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaServicioEntidad" schema="dbo" table="taServicioEntidad">
+    <composite-id class="com.hiper.cash.domain.TaServicioEntidadId" name="id">
+      <key-property name="csenIdServEmp" type="long">
+        <column name="cSEnIdServEmp"/>
+      </key-property>
+      <key-property name="csenIdEntidad" type="string">
+        <column length="15" name="cSEnIdEntidad"/>
+      </key-property>
+      <key-property name="csenTipoEntidad" type="string">
+        <column length="2" name="cSEnTipoEntidad"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TaServicioxEmpresa" fetch="select" insert="false" name="taServicioxEmpresa" update="false">
+      <column name="cSEnIdServEmp" not-null="true"/>
+    </many-to-one>
+    <property name="csenIdEmpresa" type="string">
+      <column length="15" name="cSEnIdEmpresa" not-null="true"/>
+    </property>
+    <property name="nsenNumCuenta" type="string">
+      <column length="20" name="nSEnNumCuenta"/>
+    </property>
+    <property name="csenTipoCuenta" type="string">
+      <column length="5" name="cSEnTipoCuenta"/>
+    </property>
+    <property name="csetipoPago" type="string">
+      <column length="5" name="cSETipoPago"/>
+    </property>
+    <property name="nsenMonto" type="big_decimal">
+      <column name="nSEnMonto" precision="18"/>
+    </property>
+    <property name="csenMoneda" type="string">
+      <column length="5" name="cSEnMoneda"/>
+    </property>
+    <property name="csenCodigoOtroBanco" type="string">
+      <column length="15" name="cSEnCodigoOtroBanco"/>
+    </property>
+    <property name="csenTipoCtaOtroBanco" type="string">
+      <column length="5" name="cSEnTipoCtaOtroBanco"/>
+    </property>
+    <property name="csenNumCtaCci" type="string">
+      <column length="20" name="cSEnNumCtaCCI"/>
+    </property>
+    <property name="csenModifyUser" type="string">
+      <column length="7" name="cSEnModifyUser"/>
+    </property>
+    <property name="fsenModifyDate" type="string">
+      <column length="8" name="fSEnModifyDate"/>
+    </property>
+    <property name="hsenModifyTime" type="string">
+      <column length="6" name="hSEnModifyTime"/>
+    </property>
+    <set inverse="true" name="taEntidadEmpresas">
+      <key>
+        <column name="cEEIdServEmpresa" not-null="true"/>
+        <column length="15" name="cEEIdEntidad" not-null="true"/>
+        <column length="2" name="dEETipo" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaEntidadEmpresa"/>
+    </set>
+  </class>
+</hibernate-mapping>

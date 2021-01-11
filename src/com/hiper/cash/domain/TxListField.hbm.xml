@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TxListField" schema="dbo" table="txListField">
+    <composite-id class="com.hiper.cash.domain.TxListFieldId" name="id">
+      <key-property name="dlfFieldName" type="string">
+        <column length="64" name="dLfFieldName"/>
+      </key-property>
+      <key-property name="clfCode" type="string">
+        <column length="32" name="cLfCode"/>
+      </key-property>
+      <key-property name="clfRelativeCode" type="string">
+        <column length="32" name="cLfRelativeCode"/>
+      </key-property>
+    </composite-id>
+    <property name="dlfDescription" type="string">
+      <column length="256" name="dLfDescription" not-null="true"/>
+    </property>
+    <property name="clfModifyUser" type="string">
+      <column length="7" name="cLfModifyUser"/>
+    </property>
+    <property name="flfModifyDate" type="string">
+      <column length="8" name="fLfModifyDate"/>
+    </property>
+    <property name="hlfModifyTime" type="string">
+      <column length="6" name="hLfModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

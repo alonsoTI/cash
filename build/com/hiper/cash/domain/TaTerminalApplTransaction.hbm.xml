@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaTerminalApplTransaction" schema="dbo" table="taTerminalApplTransaction">
+    <composite-id class="com.hiper.cash.domain.TaTerminalApplTransactionId" name="id">
+      <key-property name="ctatmerchantId" type="string">
+        <column length="15" name="cTATMerchantId"/>
+      </key-property>
+      <key-property name="ctatterminalNum" type="string">
+        <column length="4" name="cTATTerminalNum"/>
+      </key-property>
+      <key-property name="ctatapplicationId" type="string">
+        <column length="20" name="cTATApplicationId"/>
+      </key-property>
+      <key-property name="ctattransactionId" type="string">
+        <column length="2" name="cTATTransactionId"/>
+      </key-property>
+    </composite-id>
+    <property name="ctatterminalSn" type="string">
+      <column length="8" name="cTATTerminalSN" not-null="true"/>
+    </property>
+    <property name="ctattransactionStatus" type="string">
+      <column length="1" name="cTATTransactionStatus"/>
+    </property>
+    <property name="ntatfloorLimit" type="big_decimal">
+      <column name="nTATFloorLimit" precision="18"/>
+    </property>
+    <property name="ntatfloorLimitDollar" type="big_decimal">
+      <column name="nTATFloorLimitDollar" precision="18"/>
+    </property>
+    <property name="ctatmodifyUser" type="string">
+      <column length="7" name="cTATModifyUser"/>
+    </property>
+    <property name="ftatmodifyDate" type="string">
+      <column length="8" name="fTATModifyDate"/>
+    </property>
+    <property name="htatmodifyTime" type="string">
+      <column length="6" name="hTATModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

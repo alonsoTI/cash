@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaCamposRequeridos" schema="dbo" table="taCamposRequeridos">
+    <composite-id class="com.hiper.cash.domain.TaCamposRequeridosId" name="id">
+      <key-property name="ccridTipoPagoServ" type="long">
+        <column name="cCRIdTipoPagoServ"/>
+      </key-property>
+      <key-property name="ccridServEmp" type="long">
+        <column name="cCRIdServEmp"/>
+      </key-property>
+      <key-property name="ccridTipoPago" type="string">
+        <column length="5" name="cCRIdTipoPago"/>
+      </key-property>
+      <key-property name="ccrposicion" type="int">
+        <column name="cCRPosicion"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TaTipoPagoServicio" fetch="select" insert="false" name="taTipoPagoServicio" update="false">
+      <column name="cCRIdTipoPagoServ" not-null="true"/>
+      <column name="cCRIdServEmp" not-null="true"/>
+      <column length="5" name="cCRIdTipoPago" not-null="true"/>
+    </many-to-one>
+    <property name="dcretiqueta" type="string">
+      <column length="100" name="dCREtiqueta"/>
+    </property>
+    <property name="dcrnomVariable" type="string">
+      <column length="50" name="dCRNomVariable"/>
+    </property>
+    <property name="dcrdescripcion" type="string">
+      <column length="50" name="dCRDescripcion"/>
+    </property>
+    <property name="ccrflagObligatorio" type="java.lang.Character">
+      <column length="1" name="cCRFlagObligatorio"/>
+    </property>
+    <property name="dcrcontrolGui" type="string">
+      <column length="20" name="dCRControlGUI"/>
+    </property>
+    <property name="dcrtipoDato" type="string">
+      <column length="50" name="dCRTipoDato"/>
+    </property>
+  </class>
+</hibernate-mapping>

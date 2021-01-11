@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaActivityLimit" schema="dbo" table="taActivityLimit">
+    <composite-id class="com.hiper.cash.domain.TaActivityLimitId" name="id">
+      <key-property name="calgroupId" type="string">
+        <column length="4" name="cALGroupId"/>
+      </key-property>
+      <key-property name="caltransactionId" type="string">
+        <column length="2" name="cALTransactionId"/>
+      </key-property>
+      <key-property name="calaplicacion" type="string">
+        <column length="20" name="cALAplicacion"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TmTransactionType" fetch="select" insert="false" name="tmTransactionType" update="false">
+      <column length="2" name="cALTransactionId" not-null="true"/>
+      <column length="20" name="cALAplicacion" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.hiper.cash.domain.TmGroupCard" fetch="select" insert="false" name="tmGroupCard" update="false">
+      <column length="4" name="cALGroupId" not-null="true"/>
+    </many-to-one>
+    <property name="nallimitAmount" type="big_decimal">
+      <column name="nALLimitAmount" precision="12"/>
+    </property>
+    <property name="nallimitTimes" type="java.lang.Short">
+      <column name="nALLimitTimes" precision="4" scale="0"/>
+    </property>
+    <property name="calaction" type="string">
+      <column length="1" name="cALAction"/>
+    </property>
+    <property name="nallimitAmountDollar" type="big_decimal">
+      <column name="nALLimitAmountDollar" precision="12"/>
+    </property>
+    <property name="calmodifyUser" type="string">
+      <column length="7" name="cALModifyUser"/>
+    </property>
+    <property name="falmodifyDate" type="string">
+      <column length="8" name="fALModifyDate"/>
+    </property>
+    <property name="halmodifyTime" type="string">
+      <column length="6" name="hALModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

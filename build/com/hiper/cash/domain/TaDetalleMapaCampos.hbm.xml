@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaDetalleMapaCampos" schema="dbo" table="taDetalleMapaCampos">
+    <composite-id class="com.hiper.cash.domain.TaDetalleMapaCamposId" name="id">
+      <key-property name="cdmidMapaCampos" type="int">
+        <column name="cDMIdMapaCampos"/>
+      </key-property>
+      <key-property name="cdmposicion" type="int">
+        <column name="cDMPosicion"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TaMapaCampos" fetch="select" insert="false" name="taMapaCampos" update="false">
+      <column name="cDMIdMapaCampos" not-null="true"/>
+    </many-to-one>
+    <property name="ddmetiqueta" type="string">
+      <column length="100" name="dDMEtiqueta"/>
+    </property>
+    <property name="ddmnomVariable" type="string">
+      <column length="50" name="dDMNomVariable"/>
+    </property>
+    <property name="ddmdescripcion" type="string">
+      <column length="50" name="dDMDescripcion"/>
+    </property>
+    <property name="ndmlongMax" type="java.lang.Integer">
+      <column name="nDMLongMax"/>
+    </property>
+    <property name="ndmlongMin" type="java.lang.Integer">
+      <column name="nDMLongMin"/>
+    </property>
+    <property name="ddmtipoDato" type="string">
+      <column length="20" name="dDMTipoDato"/>
+    </property>
+    <property name="cdmflagObligatorio" type="java.lang.Character">
+      <column length="1" name="cDMFlagObligatorio"/>
+    </property>
+    <property name="ddmcontrolGui" type="string">
+      <column length="20" name="dDMControlGUI"/>
+    </property>
+    <property name="ddmtablaRef" type="string">
+      <column length="50" name="dDMTablaRef"/>
+    </property>
+    <property name="ddmcampoRef" type="string">
+      <column length="50" name="dDMCampoRef"/>
+    </property>
+    <property name="ddmvalidacion" type="string">
+      <column length="100" name="dDMValidacion"/>
+    </property>
+    <property name="cdmmodifyUser" type="string">
+      <column length="7" name="cDMModifyUser"/>
+    </property>
+    <property name="fdmmodifyDate" type="string">
+      <column length="8" name="fDMModifyDate"/>
+    </property>
+    <property name="hdmmodifyTime" type="string">
+      <column length="6" name="hDMModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

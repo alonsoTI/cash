@@ -1,0 +1,27 @@
+select cOrEstado , * from taorden
+WHERE cOrIdOrden= 334 
+
+
+SELECT cdoidOrden, cdoestado, * FROM TpDetalleOrden 
+where cdoidOrden = 338
+
+
+
+
+
+update taOrden set cOrEstado = 4  
+where cOrIdOrden = 337 
+and cOrEstado = 6  
+and ( 
+		SELECT COUNT (*) FROM tpDetalleOrden WHERE cDOIdorden = 337 AND cDOEstado NOT IN (5) 
+	)= 0 
+
+	
+update taOrden set cOrEstado = 4  
+where cOrIdOrden = 338 
+and cOrEstado = 6  
+and ( 
+		SELECT COUNT (*) AS COUNT FROM tpDetalleOrden WHERE cDOIdorden = 338 AND cDOEstado NOT IN (5) 
+	)= 0 
+	
+	

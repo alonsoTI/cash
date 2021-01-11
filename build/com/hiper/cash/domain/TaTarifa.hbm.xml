@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaTarifa" schema="dbo" table="taTarifa">
+    <id name="ctaIdTarifa" type="long">
+      <column name="cTaIdTarifa"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dtaDescripcion" type="string">
+      <column length="40" name="dTaDescripcion"/>
+    </property>
+    <property name="dtaPeriodoCobroMora" type="string">
+      <column length="15" name="dTaPeriodoCobroMora"/>
+    </property>
+    <property name="dtaModalidadMora" type="string">
+      <column length="15" name="dTaModalidadMora"/>
+    </property>
+    <property name="ctaMonedaMora" type="string">
+      <column length="3" name="cTaMonedaMora"/>
+    </property>
+    <property name="ntaValModalidadMora" type="big_decimal">
+      <column name="nTaValModalidadMora" precision="18" scale="6"/>
+    </property>
+    <property name="ctaMonedaTrxComis" type="string">
+      <column length="3" name="cTaMonedaTrxComis"/>
+    </property>
+    <property name="ntaMontoUsuTrxComis" type="big_decimal">
+      <column name="nTaMontoUsuTrxComis" precision="18" scale="6"/>
+    </property>
+    <property name="ctaAplicacionMoraDscto" type="string">
+      <column length="10" name="cTaAplicacionMoraDscto"/>
+    </property>
+    <property name="ctaMonedaUsuTrxComis" type="string">
+      <column length="3" name="cTaMonedaUsuTrxComis"/>
+    </property>
+    <property name="dtaPeriodoDcto" type="string">
+      <column length="15" name="dTaPeriodoDcto"/>
+    </property>
+    <property name="dtaModalidadDcto" type="string">
+      <column length="15" name="dTaModalidadDcto"/>
+    </property>
+    <property name="ctaMonedaDcto" type="string">
+      <column length="3" name="cTaMonedaDcto"/>
+    </property>
+    <property name="ntaValModalidadDcto" type="big_decimal">
+      <column name="nTaValModalidadDcto" scale="6"/>
+    </property>
+    <property name="ctaEstado" type="char">
+      <column length="1" name="cTaEstado" not-null="true"/>
+    </property>
+    <property name="ntaMontoTrxComis" type="big_decimal">
+      <column name="nTaMontoTrxComis" precision="18" scale="6"/>
+    </property>
+    <property name="ctaModifyUser" type="string">
+      <column length="7" name="cTaModifyUser"/>
+    </property>
+    <property name="ftaModifyDate" type="string">
+      <column length="8" name="fTaModifyDate"/>
+    </property>
+    <property name="htaModifyTime" type="string">
+      <column length="6" name="hTaModifyTime"/>
+    </property>
+    <set inverse="true" name="taServicioxEmpresas">
+      <key>
+        <column name="cSEIdTarifa"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaServicioxEmpresa"/>
+    </set>
+  </class>
+</hibernate-mapping>

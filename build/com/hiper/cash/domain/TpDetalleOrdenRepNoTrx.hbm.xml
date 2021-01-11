@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.hiper.cash.domain.TpDetalleOrden" schema="dbo" table="tpDetalleOrdenNoTrx">
+    <composite-id class="com.hiper.cash.domain.TpDetalleOrdenIdRep" name="idRep">
+      <key-property name="cdoidOrden" type="long">
+        <column name="cDOIdOrden"/>
+      </key-property>
+      <key-property name="cdoidServicioEmpresa" type="long">
+        <column name="cDOIdServicioEmpresa"/>
+      </key-property>
+      <key-property name="cdoidDetalleOrden" type="long">
+        <column name="cDOIdDetalleOrden"/>
+      </key-property>
+      <key-property name="id" type="long">
+        <column name="cDOIdDetCod"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TaOrden" fetch="select" insert="false" name="taOrden" update="false">
+      <column name="cDOIdOrden" not-null="true"/>
+      <column name="cDOIdServicioEmpresa" not-null="true"/>
+    </many-to-one>    
+    <property name="ndodocumento" type="string">
+      <column length="20" name="nDODocumento"/>
+    </property>
+    <property name="cdocodDocumento" type="string">
+      <column length="50" name="cDOCodDocumento"/>
+    </property>
+    <property name="ddocomprobante" type="string">
+      <column length="20" name="dDOComprobante"/>
+    </property>
+    <property name="ddocontrapartida" type="string">
+      <column length="20" name="dDOContrapartida"/>
+    </property>
+    <property name="ddonomContrapartida" type="string">
+      <column length="100" name="dDONomContrapartida"/>
+    </property>
+    <property name="cdocodBanco" type="string">
+      <column length="50" name="cDOCodBanco"/>
+    </property>
+    <property name="ddonombre" type="string">
+      <column length="50" name="dDONombre"/>
+    </property>
+    <property name="ddodireccion" type="string">
+      <column length="50" name="dDODireccion"/>
+    </property>
+    <property name="ddociudad" type="string">
+      <column length="50" name="dDOCiudad"/>
+    </property>
+    <property name="ddolocalidad" type="string">
+      <column length="50" name="dDOLocalidad"/>
+    </property>
+    <property name="ndonumeroCuenta" type="string">
+      <column length="20" name="nDONumeroCuenta"/>
+    </property>
+    <property name="ddotipoCuenta" type="string">
+      <column length="5" name="dDOTipoCuenta"/>
+    </property>
+    <property name="ndomonto" type="big_decimal">
+      <column name="nDOMonto" precision="18"/>
+    </property>
+    <property name="cdomoneda" type="string">
+      <column length="3" name="cDOMoneda"/>
+    </property>
+    <property name="ddotelefono" type="string">
+      <column length="15" name="dDOTelefono"/>
+    </property>
+    <property name="ddoemail" type="string">
+      <column length="50" name="dDOEmail"/>
+    </property>
+    <property name="ddodescripcion" type="string">
+      <column length="40" name="dDODescripcion"/>
+    </property>
+    <property name="cdoestado" type="char">
+      <column length="1" name="cDOEstado" not-null="true"/>
+    </property>
+    <property name="ddotipoPago" type="string">
+      <column length="5" name="dDOTipoPago"/>
+    </property>
+    <property name="ddotipoDocumento" type="string">
+      <column length="5" name="dDOTipoDocumento"/>
+    </property>
+    <property name="fdofechaProceso" type="string">
+      <column length="8" name="fDOFechaProceso"/>
+    </property>
+    <property name="hdohoraProceso" type="string">
+      <column length="6" name="hDOHoraProceso"/>
+    </property>
+    <property name="ndonumCuentaAbono" type="string">
+      <column length="20" name="nDONumCuentaAbono"/>
+    </property>
+    <property name="ndonumCuentaCargo" type="string">
+      <column length="20" name="nDONumCuentaCargo"/>
+    </property>
+    <property name="ddoreferencia" type="string">
+      <column length="50" name="dDOReferencia"/>
+    </property>
+    <property name="ddoreferenciaAdicional" type="string">
+      <column length="50" name="dDOReferenciaAdicional"/>
+    </property>
+    <property name="ndonumCuentaAbonoCci" type="string">
+      <column length="20" name="nDONumCuentaAbonoCCI"/>
+    </property>
+    <property name="ddobancoBenef" type="string">
+      <column length="50" name="dDOBancoBenef"/>
+    </property>
+    <property name="cdotipoDocBenef" type="string">
+      <column length="5" name="cDOTipoDocBenef"/>
+    </property>
+    <property name="ndonumDocBenef" type="string">
+      <column length="20" name="nDONumDocBenef"/>
+    </property>
+    <property name="ddonombreBenef" type="string">
+      <column length="50" name="dDONombreBenef"/>
+    </property>
+    <property name="ddoapePatBenef" type="string">
+      <column length="30" name="dDOApePatBenef"/>
+    </property>
+    <property name="ddoapeMatBenef" type="string">
+      <column length="30" name="dDOApeMatBenef"/>
+    </property>
+    <property name="ddodireccionBenef" type="string">
+      <column length="50" name="dDODireccionBenef"/>
+    </property>
+    <property name="ddotlfBenef" type="string">
+      <column length="20" name="dDOTlfBenef"/>
+    </property>
+    <property name="fdofechaVenc" type="string">
+      <column length="8" name="fDOFechaVenc"/>
+    </property>
+    <property name="ndomontoAbonado" type="big_decimal">
+      <column name="nDOMontoAbonado" precision="18"/>
+    </property>
+    <property name="cdomonedaMontoAbonado" type="string">
+      <column length="3" name="cDOMonedaMontoAbonado"/>
+    </property>
+    <property name="ndomontoDescuento" type="big_decimal">
+      <column name="nDOMontoDescuento" precision="18"/>
+    </property>
+    <property name="cdomonedaMontoDescuento" type="string">
+      <column length="3" name="cDOMonedaMontoDescuento"/>
+    </property>
+    <property name="ndomontoMora" type="big_decimal">
+      <column name="nDOMontoMora" precision="18"/>
+    </property>
+    <property name="cdomonedaMontoMora" type="string">
+      <column length="3" name="cDOMonedaMontoMora"/>
+    </property>
+    <property name="ndomontoComEmpresa" type="big_decimal">
+      <column name="nDOMontoComEmpresa" precision="18"/>
+    </property>
+    <property name="cdomonedaMontoComEmpresa" type="string">
+      <column length="3" name="cDOMonedaMontoComEmpresa"/>
+    </property>
+    <property name="ndomontoComCliente" type="big_decimal">
+      <column name="nDOMontoComCliente" precision="18"/>
+    </property>
+    <property name="cdomonedaMontoComCliente" type="string">
+      <column length="3" name="cDOMonedaMontoComCliente"/>
+    </property>
+    <property name="ddoadicional1" type="string">
+      <column length="50" name="dDOAdicional1"/>
+    </property>
+    <property name="ddoadicional2" type="string">
+      <column length="50" name="dDOAdicional2"/>
+    </property>
+    <property name="ddoadicional3" type="string">
+      <column length="50" name="dDOAdicional3"/>
+    </property>
+    <property name="ddoadicional4" type="string">
+      <column length="50" name="dDOAdicional4"/>
+    </property>
+    <property name="ddoadicional5" type="string">
+      <column length="50" name="dDOAdicional5"/>
+    </property>
+    <property name="ddoadicional6" type="string">
+      <column length="50" name="dDOAdicional6"/>
+    </property>
+    <property name="ddoadicional7" type="string">
+      <column length="50" name="dDOAdicional7"/>
+    </property>
+    <property name="ddoadicional8" type="string">
+      <column length="50" name="dDOAdicional8"/>
+    </property>
+    <property name="ddoadicional9" type="string">
+      <column length="50" name="dDOAdicional9"/>
+    </property>
+    <property name="ddoadicional10" type="string">
+      <column length="50" name="dDOAdicional10"/>
+    </property>
+    <property name="cdoidOrdenRef" type="java.lang.Long">
+      <column name="cDOIdOrdenRef"/>
+    </property>
+    <property name="cdoidDetalleOrdenRef" type="java.lang.Long">
+      <column name="cDOIdDetalleOrdenRef"/>
+    </property>
+    <property name="ndonumPlanilla" type="string">
+      <column length="20" name="nDONumPlanilla"/>
+    </property>
+    <property name="ndomontoLetra" type="big_decimal">
+      <column name="nDOMontoLetra" precision="18"/>
+    </property>
+    <property name="ndocodAceptante" type="string">
+      <column length="20" name="nDOCodAceptante"/>
+    </property>
+    <property name="ndoidVentanilla" type="string">
+      <column length="12" name="nDOIdVentanilla"/>
+    </property>
+    <property name="ndoidPago" type="string">
+      <column length="12" name="nDOIdPago"/>
+    </property>
+    <property name="ndonumCheque" type="string">
+      <column length="20" name="nDONumCheque"/>
+    </property>
+    <property name="cdoflagMismoCliente" type="java.lang.Character">
+      <column length="1" name="cDOFlagMismoCliente"/>
+    </property>
+    <property name="ndoitf" type="big_decimal">
+      <column name="nDOItf" precision="18"/>
+    </property>
+    <property name="cdomonedaItf" type="string">
+      <column length="3" name="cDOMonedaItf"/>
+    </property>
+    <property name="ndoportes" type="big_decimal">
+      <column name="nDOPortes" precision="18"/>
+    </property>
+    <property name="cdomonedaPortes" type="string">
+      <column length="3" name="cDOMonedaPortes"/>
+    </property>
+    <property name="ndoprotesto" type="big_decimal">
+      <column name="nDOProtesto" precision="18"/>
+    </property>
+    <property name="cdomonedaProtesto" type="string">
+      <column length="3" name="cDOMonedaProtesto"/>
+    </property>
+    <property name="cdocodigoRptaIbs" type="string">
+      <column length="4" name="cDOCodigoRptaIBS"/>
+    </property>
+    <property name="ndomontoCliComisionChg" type="big_decimal">
+      <column name="nDOMontoCliComisionCHG" precision="18"/>
+    </property>
+    <property name="ndomontoEmpComisionChg" type="big_decimal">
+      <column name="nDOMontoEmpComisionCHG" precision="18"/>
+    </property>
+    <property name="ndomontoVentanilla" type="big_decimal">
+      <column name="nDOMontoVentanilla" precision="18"/>
+    </property>
+    <property name="cdoidAgencia" type="string">
+      <column length="20" name="cDOIdAgencia "/>
+    </property>
+  </class>
+ 
+  
+  
+  <!--sql-query name="DetalleOrdenesTransferencia">
+
+        SELECT {tp.*}, {lf1.*}, {lf3.*}, {lf4.*}
+        FROM TpDetalleOrden tp
+        LEFT OUTER JOIN TxListField lf1 ON( tp.cDOMonedaMontoAbonado = lf1.clfCode AND lf1.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxListField lf3 ON( tp.cDOEstado = lf3.clfCode AND lf3.dlfFieldName = 'CashEstadoDetalleOrden' )
+        LEFT OUTER JOIN TxResult lf4 ON( tp.cDOCodigoRptaIBS = lf4.cRsResultExt)
+        WHERE tp.cDOIdOrden = :idorden AND tp.cDOIdServicioEmpresa = :servicioid 
+        	AND (tp.ddoreferencia  like :ref OR tp.ddocontrapartida like :ref )  
+        ORDER BY tp.cDOIdDetalleOrden ASC
+
+        <return alias="tp" class="com.hiper.cash.domain.TpDetalleOrden"/>
+        <return alias="lf1" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf3" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf4" class="com.hiper.cash.domain.TxResult"/>
+  </sql-query>
+  
+  <sql-query name="DetalleOrdenesCobroPago">
+
+        SELECT {tp.*}, {lf1.*}, {lf2.*}, {lf3.*}, {lf4.*}, {lf5.*}, {lf6.*}, {lf7.*},{lf8.*}
+        FROM TpDetalleOrden tp
+        LEFT OUTER JOIN TxListField lf1 ON( tp.cDOMoneda = lf1.clfCode AND lf1.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxListField lf2 ON( tp.dDOTipoCuenta = lf2.clfCode AND lf2.dlfFieldName = 'CashTipoCuenta' )
+        LEFT OUTER JOIN TxListField lf3 ON( tp.cDOEstado = lf3.clfCode AND lf3.dlfFieldName = 'CashEstadoDetalleOrden' )
+        LEFT OUTER JOIN TxListField lf4 ON( tp.cDOMonedaMontoMora = lf4.clfCode AND lf4.dlfFieldName = 'CashTipoMoneda' )
+
+        LEFT OUTER JOIN TxListField lf5 ON( tp.cDOMonedaItf = lf5.clfCode AND lf5.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxListField lf6 ON( tp.cDOMonedaPortes = lf6.clfCode AND lf6.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxListField lf7 ON( tp.cDOMonedaProtesto = lf7.clfCode AND lf7.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxResult lf8 ON( tp.cDOCodigoRptaIBS = lf8.cRsResultExt)
+        WHERE tp.cDOIdOrden = :idorden 
+        	AND tp.cDOIdServicioEmpresa = :servicioid         	
+        	AND ( tp.ddoreferencia  like :ref OR tp.ddocontrapartida like :ref )
+        ORDER BY tp.cDOIdDetalleOrden ASC
+
+        <return alias="tp" class="com.hiper.cash.domain.TpDetalleOrden"/>
+        <return alias="lf1" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf2" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf3" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf4" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf5" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf6" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf7" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf8" class="com.hiper.cash.domain.TxResult"/>
+  </sql-query-->
+  
+   <!--
+       @query  : getDetalleOrdenesxPagoCobro
+       @author : esilva
+       @desc   : Obtiene los detalles de ordenes de pago o cobro
+  -->
+  <!--sql-query name="getDetalleOrdenesCobroPago">
+
+        SELECT {tp.*}, {lf1.*}, {lf2.*}, {lf3.*}, {lf4.*}, {lf5.*}, {lf6.*}, {lf7.*},{lf8.*}
+        FROM TpDetalleOrden tp
+        LEFT OUTER JOIN TxListField lf1 ON( tp.cDOMoneda = lf1.clfCode AND lf1.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxListField lf2 ON( tp.dDOTipoCuenta = lf2.clfCode AND lf2.dlfFieldName = 'CashTipoCuenta' )
+        LEFT OUTER JOIN TxListField lf3 ON( tp.cDOEstado = lf3.clfCode AND lf3.dlfFieldName = 'CashEstadoDetalleOrden' )
+        LEFT OUTER JOIN TxListField lf4 ON( tp.cDOMonedaMontoMora = lf4.clfCode AND lf4.dlfFieldName = 'CashTipoMoneda' )
+
+        LEFT OUTER JOIN TxListField lf5 ON( tp.cDOMonedaItf = lf5.clfCode AND lf5.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxListField lf6 ON( tp.cDOMonedaPortes = lf6.clfCode AND lf6.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxListField lf7 ON( tp.cDOMonedaProtesto = lf7.clfCode AND lf7.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxResult lf8 ON( tp.cDOCodigoRptaIBS = lf8.cRsResultExt)
+        WHERE tp.cDOIdOrden = :idorden AND tp.cDOIdServicioEmpresa = :servicioid AND tp.cDOIdDetalleOrden &gt; :idDetOrd
+        ORDER BY tp.cDOIdDetalleOrden ASC
+
+        <return alias="tp" class="com.hiper.cash.domain.TpDetalleOrden"/>
+        <return alias="lf1" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf2" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf3" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf4" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf5" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf6" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf7" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf8" class="com.hiper.cash.domain.TxResult"/>
+  </sql-query>
+  <sql-query name="getDetalleOrdenesTransferencia">
+
+        SELECT {tp.*}, {lf1.*}, {lf3.*}, {lf4.*}
+        FROM TpDetalleOrden tp
+        LEFT OUTER JOIN TxListField lf1 ON( tp.cDOMonedaMontoAbonado = lf1.clfCode AND lf1.dlfFieldName = 'CashTipoMoneda' )
+        LEFT OUTER JOIN TxListField lf3 ON( tp.cDOEstado = lf3.clfCode AND lf3.dlfFieldName = 'CashEstadoDetalleOrden' )
+        LEFT OUTER JOIN TxResult lf4 ON( tp.cDOCodigoRptaIBS = lf4.cRsResultExt)
+        WHERE tp.cDOIdOrden = :idorden AND tp.cDOIdServicioEmpresa = :servicioid AND tp.cDOIdDetalleOrden &gt; :idDetOrd
+        ORDER BY tp.cDOIdDetalleOrden ASC
+
+        <return alias="tp" class="com.hiper.cash.domain.TpDetalleOrden"/>
+        <return alias="lf1" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf3" class="com.hiper.cash.domain.TxListField"/>
+        <return alias="lf4" class="com.hiper.cash.domain.TxResult"/>
+  </sql-query-->
+</hibernate-mapping>

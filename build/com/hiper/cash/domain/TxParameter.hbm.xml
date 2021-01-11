@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TxParameter" schema="dbo" table="txParameter">
+    <id name="cpmParameterId" type="string">
+      <column length="2" name="cPmParameterId"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="npmNumericValue" type="java.lang.Long">
+      <column name="nPmNumericValue" precision="12" scale="0"/>
+    </property>
+    <property name="dpmTextValue" type="string">
+      <column length="32" name="dPmTextValue"/>
+    </property>
+    <property name="dpmDescription" type="string">
+      <column length="64" name="dPmDescription"/>
+    </property>
+    <property name="cpmModifyUser" type="string">
+      <column length="7" name="cPmModifyUser"/>
+    </property>
+    <property name="fpmModifyDate" type="string">
+      <column length="8" name="fPmModifyDate"/>
+    </property>
+    <property name="hpmModifyTime" type="string">
+      <column length="6" name="hPmModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

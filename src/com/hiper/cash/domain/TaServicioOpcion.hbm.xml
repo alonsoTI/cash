@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaServicioOpcion" schema="dbo" table="taServicioOpcion">
+    <composite-id class="com.hiper.cash.domain.TaServicioOpcionId" name="id">
+      <key-property name="csoservicioId" type="string">
+        <column length="2" name="cSOServicioId"/>
+      </key-property>
+      <key-property name="csoproceso" type="string">
+        <column length="5" name="cSOProceso"/>
+      </key-property>
+      <key-property name="csomodulo" type="string">
+        <column length="3" name="cSOModulo"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TmServicio" fetch="select" insert="false" name="tmServicio" update="false">
+      <column length="2" name="cSOServicioId" not-null="true"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

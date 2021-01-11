@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.hiper.cash.domain.TaOrden" schema="dbo" table="taOrdenRep">
+    <composite-id class="com.hiper.cash.domain.TaOrdenId" name="id">
+      <key-property name="corIdOrden" type="long">
+        <column name="cOrIdOrden"/>
+      </key-property>
+      <key-property name="corIdServicioEmpresa" type="long">
+        <column name="cOrIdServicioEmpresa"/>
+      </key-property>
+    </composite-id>   
+    <property name="forFechaRegistro" type="string">
+      <column length="8" name="fOrFechaRegistro" not-null="true"/>
+    </property>
+    <property name="forFechaInicio" type="string">
+      <column length="8" name="fOrFechaInicio" not-null="true"/>
+    </property>
+    <property name="horHoraInicio" type="string">
+      <column length="6" name="hOrHoraInicio"/>
+    </property>
+    <property name="forFechaFin" type="string">
+      <column length="8" name="fOrFechaFin" not-null="true"/>
+    </property>
+    <property name="corEstado" type="char">
+      <column length="1" name="cOrEstado" not-null="true"/>
+    </property>
+    <property name="dorReferencia" type="string">
+      <column length="50" name="dOrReferencia"/>
+    </property>
+    <property name="dorTipoIngreso" type="java.lang.Character">
+      <column length="1" name="dOrTipoIngreso"/>
+    </property>
+    <property name="dorTipoCuenta" type="string">
+      <column length="3" name="dOrTipoCuenta"/>
+    </property>
+    <property name="norNumeroCuenta" type="string">
+      <column length="20" name="nOrNumeroCuenta" not-null="true"/>
+    </property>
+    <property name="norNumeroRegistros" type="java.lang.Integer">
+      <column name="nOrNumeroRegistros"/>
+    </property>
+    <property name="corMoneda" type="string">
+      <column length="3" name="cOrMoneda"/>
+    </property>
+    <property name="norMontoSoles" type="big_decimal">
+      <column name="nOrMontoSoles" precision="18"/>
+    </property>
+    <property name="corEstadoMontoSoles" type="char">
+      <column length="1" name="cOrEstadoMontoSoles" not-null="true"/>
+    </property>
+    <property name="norMontoDolares" type="big_decimal">
+      <column name="nOrMontoDolares" precision="18"/>
+    </property>
+    <property name="corEstadoMontoDolares" type="char">
+      <column length="1" name="cOrEstadoMontoDolares" not-null="true"/>
+    </property>
+    <property name="norMontoEuros" type="big_decimal">
+      <column name="nOrMontoEuros" precision="18"/>
+    </property>
+    <property name="corEstadoMontoEuros" type="char">
+      <column length="1" name="cOrEstadoMontoEuros" not-null="true"/>
+    </property>
+    <property name="corcodRptaIbsSoles" type="string">
+      <column length="4" name="cOrCodRptaIBSSoles"/>
+    </property>
+    <property name="corcodRptaIbsDolares" type="string">
+      <column length="4" name="cOrCodRptaIBSDolares"/>
+    </property>
+    <property name="corcodRptaIbsEuros" type="string">
+      <column length="4" name="cOrCodRptaIBSEuros"/>
+    </property>
+    <property name="norMontoA" type="big_decimal">
+      <column name="nOrMontoA" precision="18"/>
+    </property>
+    <property name="norMontoB" type="big_decimal">
+      <column name="nOrMontoB" precision="18"/>
+    </property>
+    <property name="nombreEmpresa" type="string">
+      <column length="100" name="nombreEmpresa"/>
+    </property>
+    <property name="nombreServicio" type="string">
+      <column length="100" name="nombreServicio"/>
+    </property>
+    <property name="nombreEstado" type="string">
+      <column length="100" name="nombreEstadoOrden"/>
+    </property>
+    <list inverse="true" name="tpDetalleOrdens">
+      <key>
+        <column name="cDOIdOrden" not-null="true"/>
+        <column name="cDOIdServicioEmpresa" not-null="true"/>
+      </key>
+      <index column="cDOIdDetCod"></index>      
+      <one-to-many class="com.hiper.cash.domain.TpDetalleOrden"/>      
+    </list>  
+  </class>  
+</hibernate-mapping>

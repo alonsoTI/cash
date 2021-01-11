@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TpDetalleBuzon" schema="dbo" table="tpDetalleBuzon">
+    <composite-id class="com.hiper.cash.domain.TpDetalleBuzonId" name="id">
+      <key-property name="cdbuIdEnvio" type="long">
+        <column name="cDBuIdEnvio"/>
+      </key-property>
+      <key-property name="cdbuIdDetalleBuzon" type="long">
+        <column name="cDBuIdDetalleBuzon"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TaBuzonEnvio" fetch="select" insert="false" name="taBuzonEnvio" update="false">
+      <column name="cDBuIdEnvio" not-null="true"/>
+    </many-to-one>
+    <property name="ddbuCodOrientacion" type="string">
+      <column length="2" name="dDBuCodOrientacion"/>
+    </property>
+    <property name="ndbuSecuencial" type="java.lang.Integer">
+      <column name="nDBuSecuencial"/>
+    </property>
+    <property name="ndbuCuentaEmpresa" type="string">
+      <column length="20" name="nDBuCuentaEmpresa"/>
+    </property>
+    <property name="ddbuComprobante" type="string">
+      <column length="20" name="dDBuComprobante"/>
+    </property>
+    <property name="ddbuNomContrapartida" type="string">
+      <column length="100" name="dDbuNomContrapartida"/>
+    </property>
+    <property name="ddbuContrapartida" type="string">
+      <column length="20" name="dDBuContrapartida"/>
+    </property>
+    <property name="cdbuCodBanco" type="string">
+      <column length="10" name="cDBuCodBanco"/>
+    </property>
+    <property name="ndbuDocumento" type="string">
+      <column length="20" name="nDBuDocumento"/>
+    </property>
+    <property name="ddbuNombre" type="string">
+      <column length="40" name="dDBuNombre"/>
+    </property>
+    <property name="ddbuDireccion" type="string">
+      <column length="50" name="dDBuDireccion"/>
+    </property>
+    <property name="ddbuCiudad" type="string">
+      <column length="50" name="dDBuCiudad"/>
+    </property>
+    <property name="ddbuLocalidad" type="string">
+      <column length="50" name="dDBuLocalidad"/>
+    </property>
+    <property name="ndbuNumeroCuenta" type="string">
+      <column length="20" name="nDBuNumeroCuenta"/>
+    </property>
+    <property name="ddbuTipoCuenta" type="string">
+      <column length="5" name="dDBuTipoCuenta"/>
+    </property>
+    <property name="ndbuMonto" type="big_decimal">
+      <column name="nDBuMonto" precision="15"/>
+    </property>
+    <property name="ddbuMoneda" type="string">
+      <column length="3" name="dDBuMoneda"/>
+    </property>
+    <property name="ddbuTelefono" type="string">
+      <column length="15" name="dDBuTelefono"/>
+    </property>
+    <property name="ddbuEmail" type="string">
+      <column length="50" name="dDBuEmail"/>
+    </property>
+    <property name="ddbuDescripcion" type="string">
+      <column length="40" name="dDBuDescripcion"/>
+    </property>
+    <property name="cdbuEstado" type="java.lang.Character">
+      <column length="1" name="cDBuEstado"/>
+    </property>
+    <property name="ddbuTipoPago" type="string">
+      <column length="5" name="dDBuTipoPago"/>
+    </property>
+    <property name="ddbuTipoDocumento" type="string">
+      <column length="5" name="dDBuTipoDocumento"/>
+    </property>
+    <property name="fdbuFechaProceso" type="string">
+      <column length="10" name="fDBuFechaProceso"/>
+    </property>
+    <property name="hdbuHoraProceso" type="string">
+      <column length="8" name="hDBuHoraProceso"/>
+    </property>
+    <property name="ndbuNumCuentaAbono" type="string">
+      <column length="20" name="nDBuNumCuentaAbono"/>
+    </property>
+    <property name="ndbuNumCuentaCargo" type="string">
+      <column length="20" name="nDBuNumCuentaCargo"/>
+    </property>
+    <property name="ddbuReferencia" type="string">
+      <column length="50" name="dDBuReferencia"/>
+    </property>
+    <property name="ndbuNumCuentaAbonoCci" type="string">
+      <column length="20" name="nDBuNumCuentaAbonoCCI"/>
+    </property>
+    <property name="ddbuBancoBenef" type="string">
+      <column length="50" name="dDBuBancoBenef"/>
+    </property>
+    <property name="cdbuTipoDocBenef" type="string">
+      <column length="5" name="cDBuTipoDocBenef"/>
+    </property>
+    <property name="ndbuNumDocBenef" type="string">
+      <column length="20" name="nDBuNumDocBenef"/>
+    </property>
+    <property name="ddbuNombreBenef" type="string">
+      <column length="40" name="dDBuNombreBenef"/>
+    </property>
+    <property name="ddbuApepatBenef" type="string">
+      <column length="30" name="dDBuApepatBenef"/>
+    </property>
+    <property name="ddbuApeMatBenef" type="string">
+      <column length="30" name="dDBuApeMatBenef"/>
+    </property>
+    <property name="ddbuDireccionBenef" type="string">
+      <column length="50" name="dDBuDireccionBenef"/>
+    </property>
+    <property name="ddbuTlfBenef" type="string">
+      <column length="20" name="dDBuTlfBenef"/>
+    </property>
+    <property name="fdbuFechaVenc" type="string">
+      <column length="10" name="fDBuFechaVenc"/>
+    </property>
+    <property name="ddbuAdicional1" type="string">
+      <column length="50" name="dDBuAdicional1"/>
+    </property>
+    <property name="ddbuAdicional2" type="string">
+      <column length="50" name="dDBuAdicional2"/>
+    </property>
+    <property name="ddbuAdicional3" type="string">
+      <column length="50" name="dDBuAdicional3"/>
+    </property>
+    <property name="ddbuAdicional4" type="string">
+      <column length="50" name="dDBuAdicional4"/>
+    </property>
+    <property name="ddbuAdicional5" type="string">
+      <column length="50" name="dDBuAdicional5"/>
+    </property>
+    <property name="ddbuAdicional6" type="string">
+      <column length="50" name="dDBuAdicional6"/>
+    </property>
+    <property name="ddbuAdicional7" type="string">
+      <column length="50" name="dDBuAdicional7"/>
+    </property>
+    <property name="ddbuAdicional8" type="string">
+      <column length="50" name="dDBuAdicional8"/>
+    </property>
+    <property name="ddbuAdicional9" type="string">
+      <column length="50" name="dDBuAdicional9"/>
+    </property>
+    <property name="ddbuAdicional10" type="string">
+      <column length="50" name="dDBuAdicional10"/>
+    </property>
+    <property name="ddbuReferenciaAdicional" type="string">
+      <column length="50" name="dDBuReferenciaAdicional"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaMerchantProfileApplication" schema="dbo" table="taMerchantProfileApplication">
+    <composite-id class="com.hiper.cash.domain.TaMerchantProfileApplicationId" name="id">
+      <key-property name="cmamerchantProfileId" type="string">
+        <column length="15" name="cMAMerchantProfileId"/>
+      </key-property>
+      <key-property name="cmaapplicationId" type="string">
+        <column length="20" name="cMAApplicationID"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TmMerchantProfile" fetch="select" insert="false" name="tmMerchantProfile" update="false">
+      <column length="15" name="cMAMerchantProfileId" not-null="true"/>
+    </many-to-one>
+    <property name="cmaaccessType" type="string">
+      <column length="1" name="cMAAccessType"/>
+    </property>
+    <property name="cmacloseType" type="string">
+      <column length="1" name="cMACloseType"/>
+    </property>
+    <property name="cmaaccessTrx" type="string">
+      <column length="1" name="cMAAccessTrx"/>
+    </property>
+    <property name="cmacardWriter" type="string">
+      <column length="1" name="cMACardWriter"/>
+    </property>
+    <property name="cmatip" type="string">
+      <column length="1" name="cMATip"/>
+    </property>
+    <property name="cmamultCurrency" type="string">
+      <column length="1" name="cMAMultCurrency"/>
+    </property>
+    <property name="cmareqLastNumber" type="string">
+      <column length="1" name="cMAReqLastNumber"/>
+    </property>
+    <property name="cmareqDocId" type="string">
+      <column length="1" name="cMAReqDocId"/>
+    </property>
+    <property name="cmareqCashBack" type="string">
+      <column length="1" name="cMAReqCashBack"/>
+    </property>
+    <property name="cmatransTip" type="string">
+      <column length="1" name="cMATransTip"/>
+    </property>
+    <property name="nmafloorLimit" type="big_decimal">
+      <column name="nMAFloorLimit" precision="12"/>
+    </property>
+    <property name="nmarecAmount" type="big_decimal">
+      <column name="nMARecAmount" precision="12"/>
+    </property>
+    <property name="cmamultiproduct" type="string">
+      <column length="1" name="cMAMultiproduct"/>
+    </property>
+    <property name="cmatrxDefault" type="string">
+      <column length="20" name="cMATrxDefault"/>
+    </property>
+    <property name="cmamodifyUser" type="string">
+      <column length="7" name="cMAModifyUser"/>
+    </property>
+    <property name="fmamodifyDate" type="string">
+      <column length="8" name="fMAModifyDate"/>
+    </property>
+    <property name="hmamodifyTime" type="string">
+      <column length="6" name="hMAModifyTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

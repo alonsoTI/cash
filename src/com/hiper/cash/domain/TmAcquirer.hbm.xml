@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmAcquirer" schema="dbo" table="tmAcquirer">
+    <id name="cacAcquirerId" type="string">
+      <column length="32" name="cAcAcquirerId"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dacDescription" type="string">
+      <column length="64" name="dAcDescription" not-null="true"/>
+    </property>
+    <property name="cacPrimaryHost" type="string">
+      <column length="20" name="cAcPrimaryHost" not-null="true"/>
+    </property>
+    <property name="cacHostBackup" type="string">
+      <column length="20" name="cAcHostBackup" not-null="true"/>
+    </property>
+    <property name="cacMsgFormat" type="string">
+      <column length="2" name="cAcMsgFormat" not-null="true"/>
+    </property>
+    <property name="hacSettleHour" type="string">
+      <column length="6" name="hAcSettleHour" not-null="true"/>
+    </property>
+    <property name="cacProcessType" type="string">
+      <column length="1" name="cAcProcessType" not-null="true"/>
+    </property>
+    <property name="cacSettleFlag" type="string">
+      <column length="1" name="cAcSettleFlag" not-null="true"/>
+    </property>
+    <property name="cacTypeSettle" type="string">
+      <column length="1" name="cAcTypeSettle"/>
+    </property>
+    <property name="cacNii" type="string">
+      <column length="3" name="cAcNII"/>
+    </property>
+    <property name="cacKey" type="string">
+      <column length="74" name="cAcKey"/>
+    </property>
+    <property name="cacEchoTest" type="string">
+      <column length="5" name="cAcEchoTest"/>
+    </property>
+    <property name="cacModifyUser" type="string">
+      <column length="7" name="cAcModifyUser"/>
+    </property>
+    <property name="facModifyDate" type="string">
+      <column length="8" name="fAcModifyDate"/>
+    </property>
+    <property name="hacModifyTime" type="string">
+      <column length="6" name="hAcModifyTime"/>
+    </property>
+    <set inverse="true" name="tmGroupCards">
+      <key>
+        <column length="32" name="cGrAcquirerId" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TmGroupCard"/>
+    </set>
+  </class>
+</hibernate-mapping>

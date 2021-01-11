@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!--
+		Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA
+	-->
+<hibernate-mapping>
+	<class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaAprobacionOrden"
+		schema="dbo" table="taAprobacionOrden">
+		<composite-id class="com.hiper.cash.domain.TaAprobacionOrdenId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="caoidAprobacion" type="long">
+				<column name="cAOIdAprobacion" />
+			</key-property>
+			<key-property name="caoidOrden" type="long">
+				<column name="cAOIdOrden" />
+			</key-property>
+			<key-property name="caoidServEmp" type="long">
+				<column name="cAOIdServEmp" />
+			</key-property>
+		</composite-id>
+		<many-to-one class="com.hiper.cash.domain.TaOrden" fetch="select"
+			insert="false" name="taOrden" update="false">
+			<column name="cAOIdOrden" not-null="true" />
+			<column name="cAOIdServEmp" not-null="true" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="caoidAprobador"
+			type="java.lang.Long">
+			<column name="cAOIdAprobador" />
+		</property>
+		<property generated="never" lazy="false" name="faofechaAprobacion"
+			type="string">
+			<column length="8" name="fAOFechaAprobacion" />
+		</property>
+		<property generated="never" lazy="false" name="hOrHoraRegistro"
+			type="string">
+			<column length="6" name="hOrHoraRegistro" />
+		</property>
+	</class>
+</hibernate-mapping>

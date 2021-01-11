@@ -1,0 +1,42 @@
+#tabla{				
+	width:100%;
+	border-collapse:collapse;
+	font-size: 11px;
+	color: #666699;
+	border:1px solid #DCDCDC;
+}
+
+
+			
+#tabla td, #tabla th{				
+	border-right:1px solid #DCDCDC;
+	padding:3px 7px 2px 7px;
+}
+		
+			
+#tabla th{
+	padding-top:5px;
+	padding-bottom:4px;
+	background-color:#6495ED;
+	color:#ffffff;				 
+}
+			
+#tabla tr.alt td{				
+	background-color:#e8edff;
+}
+
+#paginacion{				
+	width:100%;
+	border-collapse:collapse;
+	font-size: 11px;
+	padding-top: 50px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+#table_msg{
+	font-size: 13px;
+	padding-top: 10px;
+	text-align: center;
+}
+

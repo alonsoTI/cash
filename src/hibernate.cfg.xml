@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.datasource">java:/conCashCenter</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.connection.autoReconnect">true</property>
+		<property name="hibernate.connection.autoReconnectForPools">true</property>
+		<property name="hibernate.connection.is-connection-validation-required">true</property>
+		<!--property name="hibernate.statement_cache.size">0</property>
+		<property name="hibernate.jdbc.batch_size">0</property-->
+		
+		<mapping resource="com/hiper/cash/domain/TpDetalleCobroSinBd.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmFormato.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaTerminalApplication.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmFuncionario.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmTerminal.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaMapaCampos.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaCuentasServicioEmpresa.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaDetalleMapaCampos.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaFloorLimit.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaGlosaCobroSinBd.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaFuncionarioServicio.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmServicio.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmTransactionType.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaTipoPagoServicio.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaEntidadEmpresa.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaContactoEmpresa.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaCamposRequeridos.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaTerminalApplTransaction.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaAprobacionOrden.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmMerchant.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaSecuencial.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaOrden.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmDownloadProfile.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmGroupCard.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TxBatch.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaTarifa.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaDetalleFormato.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmTariff.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmMerchantChain.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TpDetalleOrden.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmBanco.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmSoporte.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaEmpresaDeServicio.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmTipoPago.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaLogValidacion.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmEmpresa.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaFuncionarioEmpresa.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaMerchantProfileApplication.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmApplication.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaServicioOpcion.hbm.xml" />
+
+		<mapping resource="com/hiper/cash/domain/TaServicioxEmpresa.hbm.xml" />
+		<!--
+			<mapping class="com.hiper.cash.domain.TaServicioxEmpresa"/> <mapping
+			class="com.hiper.cash.domain.TaServicioxEmpresaEx"/>
+		-->
+		<mapping resource="com/hiper/cash/domain/TxResult.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmAcquirer.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TxParameter.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TxListFieldDetail.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaAprobadorServicio.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaBuzonEnvio.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TpAlarmaLog.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TxListField.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TpDetalleBuzon.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaServicioEntidad.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaActivityLimit.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TmMerchantProfile.hbm.xml" />
+		<mapping resource="com/hiper/cash/domain/TaEmpresaFormato.hbm.xml" />		
+
+	</session-factory>
+</hibernate-configuration>

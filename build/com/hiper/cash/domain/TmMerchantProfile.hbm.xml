@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmMerchantProfile" schema="dbo" table="tmMerchantProfile">
+    <id name="cmpprofileId" type="string">
+      <column length="15" name="cMPProfileId"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="cmpModifyUser" type="string">
+      <column length="7" name="cMpModifyUser"/>
+    </property>
+    <property name="fmpModifyDate" type="string">
+      <column length="8" name="fMpModifyDate"/>
+    </property>
+    <property name="hmpModifyTime" type="string">
+      <column length="6" name="hMpModifyTime"/>
+    </property>
+    <set inverse="true" name="taMerchantProfileApplications">
+      <key>
+        <column length="15" name="cMAMerchantProfileId" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaMerchantProfileApplication"/>
+    </set>
+    <set inverse="true" name="tmMerchants">
+      <key>
+        <column length="15" name="cMrProfileId" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TmMerchant"/>
+    </set>
+    <set inverse="true" name="taFloorLimits">
+      <key>
+        <column length="15" name="cFLMrProfileId" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaFloorLimit"/>
+    </set>
+  </class>
+</hibernate-mapping>

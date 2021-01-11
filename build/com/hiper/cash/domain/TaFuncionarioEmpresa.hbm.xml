@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaFuncionarioEmpresa" schema="dbo" table="taFuncionarioEmpresa">
+    <composite-id class="com.hiper.cash.domain.TaFuncionarioEmpresaId" name="id">
+      <key-property name="cfemIdEmpresa" type="string">
+        <column length="15" name="cFEmIdEmpresa"/>
+      </key-property>
+      <key-property name="cfemIdFuncionario" type="string">
+        <column length="10" name="cFEmIdFuncionario"/>
+      </key-property>
+      <key-property name="cfemTipo" type="string">
+        <column length="2" name="cFEmTipo"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TmEmpresa" fetch="select" insert="false" name="tmEmpresa" update="false">
+      <column length="15" name="cFEmIdEmpresa" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.hiper.cash.domain.TmFuncionario" fetch="select" insert="false" name="tmFuncionario" update="false">
+      <column length="10" name="cFEmIdFuncionario" not-null="true"/>
+    </many-to-one>
+    <property name="cfemModifyUser" type="string">
+      <column length="7" name="cFEmModifyUser"/>
+    </property>
+    <property name="ffemModifyDate" type="string">
+      <column length="8" name="fFEmModifyDate"/>
+    </property>
+    <property name="hfemModifyHour" type="string">
+      <column length="6" name="hFEmModifyHour"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmServicio" schema="dbo" table="tmServicio">
+    <id name="csrIdServicio" type="string">
+      <column length="2" name="cSrIdServicio"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dsrDescripcion" type="string">
+      <column length="100" name="dSrDescripcion" not-null="true"/>
+    </property>
+    <property name="csrTipo" type="string">
+      <column length="10" name="cSrTipo"/>
+    </property>
+    <property name="csrFlagInformacion" type="java.lang.Character">
+      <column length="1" name="cSrFlagInformacion"/>
+    </property>
+    <property name="csrModifyUser" type="string">
+      <column length="7" name="cSrModifyUser"/>
+    </property>
+    <property name="fsrModifyDate" type="string">
+      <column length="8" name="fSrModifyDate"/>
+    </property>
+    <property name="hsrModifyTime" type="string">
+      <column length="6" name="hSrModifyTime"/>
+    </property>
+    <property name="csrServicioPadre" type="string">
+      <column length="2" name="cSrServicioPadre"/>
+    </property>
+    <property name="csrFlagVisible" type="java.lang.Character">
+      <column length="1" name="cSrFlagVisible"/>
+    </property>
+    <set inverse="true" name="taServicioxEmpresas">
+      <key>
+        <column length="2" name="cSEmIdServicio" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaServicioxEmpresa"/>
+    </set>
+    <set inverse="true" name="taServicioOpcions">
+      <key>
+        <column length="2" name="cSOServicioId" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaServicioOpcion"/>
+    </set>
+  </class>
+</hibernate-mapping>

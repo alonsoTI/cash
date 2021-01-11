@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmTerminal" schema="dbo" table="tmTerminal">
+    <composite-id class="com.hiper.cash.domain.TmTerminalId" name="id">
+      <key-property name="ctrMerchantId" type="string">
+        <column length="15" name="cTrMerchantId"/>
+      </key-property>
+      <key-property name="ctrTerminalNum" type="string">
+        <column length="4" name="cTrTerminalNum"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TmMerchant" fetch="select" insert="false" name="tmMerchant" update="false">
+      <column length="15" name="cTrMerchantId" not-null="true"/>
+    </many-to-one>
+    <property name="ctrStatus" type="string">
+      <column length="1" name="cTrStatus" not-null="true"/>
+    </property>
+    <property name="ctrType" type="string">
+      <column length="1" name="cTrType" not-null="true"/>
+    </property>
+    <property name="dtrTerminalSn" type="string">
+      <column length="8" name="dTrTerminalSN"/>
+    </property>
+    <property name="ntrSwversion" type="string">
+      <column length="8" name="nTrSWVersion"/>
+    </property>
+    <property name="ctrWorkingKey" type="string">
+      <column length="74" name="cTrWorkingKey"/>
+    </property>
+    <property name="ftrGenWkdate" type="string">
+      <column length="8" name="fTrGenWKDate"/>
+    </property>
+    <property name="dtrAddress" type="string">
+      <column length="60" name="dTrAddress"/>
+    </property>
+    <property name="dtrDescription" type="string">
+      <column length="64" name="dTrDescription"/>
+    </property>
+    <property name="ctrSeqNumber" type="string">
+      <column length="4" name="cTrSeqNumber"/>
+    </property>
+    <property name="ctrTypeWork" type="string">
+      <column length="6" name="cTrTypeWork"/>
+    </property>
+    <property name="ctrModel" type="string">
+      <column length="32" name="cTrModel"/>
+    </property>
+    <property name="ctrConnect" type="java.lang.Character">
+      <column length="1" name="cTrConnect"/>
+    </property>
+    <property name="ctrMultMerchant" type="java.lang.Character">
+      <column length="1" name="cTrMultMerchant"/>
+    </property>
+    <property name="ctrStatusLogin" type="java.lang.Character">
+      <column length="1" name="cTrStatusLogin"/>
+    </property>
+    <property name="ctrTraceNumber" type="string">
+      <column length="6" name="cTrTraceNumber"/>
+    </property>
+    <property name="ctrLoteNumber" type="string">
+      <column length="6" name="cTrLoteNumber"/>
+    </property>
+    <property name="ctrAplicacion" type="string">
+      <column length="20" name="cTrAplicacion"/>
+    </property>
+    <property name="ctrHfr1" type="string">
+      <column length="40" name="cTrHFR1"/>
+    </property>
+    <property name="ctrHfr2" type="string">
+      <column length="40" name="cTrHFR2"/>
+    </property>
+    <property name="ctrHfr3" type="string">
+      <column length="40" name="cTrHFR3"/>
+    </property>
+    <property name="ctrTrl1" type="string">
+      <column length="40" name="cTrTRL1"/>
+    </property>
+    <property name="ctrTrl2" type="string">
+      <column length="40" name="cTrTRL2"/>
+    </property>
+    <property name="ctrFtr1" type="string">
+      <column length="40" name="cTrFTR1"/>
+    </property>
+    <property name="ctrFtr2" type="string">
+      <column length="40" name="cTrFTR2"/>
+    </property>
+    <property name="ctrFtr3" type="string">
+      <column length="40" name="cTrFTR3"/>
+    </property>
+    <property name="ctrCodBar" type="string">
+      <column length="1" name="cTrCodBar"/>
+    </property>
+    <property name="ctrCodVer" type="string">
+      <column length="2" name="cTrCodVer"/>
+    </property>
+    <property name="ctrCodTarj" type="string">
+      <column length="1" name="cTrCodTarj"/>
+    </property>
+    <property name="ctrDobleImp" type="string">
+      <column length="1" name="cTrDobleImp"/>
+    </property>
+    <property name="ctrImpPago" type="string">
+      <column length="1" name="cTrImpPago"/>
+    </property>
+    <property name="ctrImpCuota" type="string">
+      <column length="1" name="cTrImpCuota"/>
+    </property>
+    <property name="ctrImpDeuda" type="string">
+      <column length="1" name="cTrImpDeuda"/>
+    </property>
+    <property name="ctrClave" type="string">
+      <column length="4" name="cTrClave"/>
+    </property>
+    <property name="ctrNumMasterKey" type="string">
+      <column length="1" name="cTrNumMasterKey"/>
+    </property>
+    <property name="ntrNroHopper" type="string">
+      <column length="1" name="nTrNroHopper"/>
+    </property>
+    <property name="ctrCodMoneda1" type="string">
+      <column length="3" name="cTrCodMoneda1"/>
+    </property>
+    <property name="ntrNroMoneda1" type="string">
+      <column length="5" name="nTrNroMoneda1"/>
+    </property>
+    <property name="ctrCodMoneda2" type="string">
+      <column length="3" name="cTrCodMoneda2"/>
+    </property>
+    <property name="ntrNroMoneda2" type="string">
+      <column length="5" name="nTrNroMoneda2"/>
+    </property>
+    <property name="ctrCodMoneda3" type="string">
+      <column length="3" name="cTrCodMoneda3"/>
+    </property>
+    <property name="ntrNroMoneda3" type="string">
+      <column length="5" name="nTrNroMoneda3"/>
+    </property>
+    <property name="ctrCodMoneda4" type="string">
+      <column length="3" name="cTrCodMoneda4"/>
+    </property>
+    <property name="ntrNroMoneda4" type="string">
+      <column length="5" name="nTrNroMoneda4"/>
+    </property>
+    <property name="ctrAplicacionDest" type="string">
+      <column length="10" name="cTrAplicacionDest"/>
+    </property>
+    <property name="ctrBatchNumber" type="string">
+      <column length="8" name="cTrBatchNumber"/>
+    </property>
+    <property name="ntrLongitudTrama" type="string">
+      <column length="15" name="nTrLongitudTrama"/>
+    </property>
+    <property name="ctrModifyUser" type="string">
+      <column length="7" name="cTrModifyUser"/>
+    </property>
+    <property name="ftrModifyDate" type="string">
+      <column length="8" name="fTrModifyDate"/>
+    </property>
+    <property name="htrModifyTime" type="string">
+      <column length="6" name="hTrModifyTime"/>
+    </property>
+    <property name="ftrLastEchoDate" type="string">
+      <column length="8" name="fTrLastEchoDate"/>
+    </property>
+    <property name="htrLastEchoTime" type="string">
+      <column length="6" name="hTrLastEchoTime"/>
+    </property>
+    <property name="ftrLastTrxFinDate" type="string">
+      <column length="8" name="fTrLastTrxFinDate"/>
+    </property>
+    <property name="htrLastTrxFinTime" type="string">
+      <column length="6" name="hTrLastTrxFinTime"/>
+    </property>
+    <property name="ftrLastTrxAdmDate" type="string">
+      <column length="8" name="fTrLastTrxAdmDate"/>
+    </property>
+    <property name="htrLastTrxAdmTime" type="string">
+      <column length="6" name="hTrLastTrxAdmTime"/>
+    </property>
+    <property name="ctrFilesVersion" type="java.lang.Long">
+      <column name="cTrFilesVersion"/>
+    </property>
+    <property name="ctrDownloadState" type="java.lang.Character">
+      <column length="1" name="cTrDownloadState"/>
+    </property>
+    <property name="ntrDownloadAttempts" type="string">
+      <column length="3" name="nTrDownloadAttempts"/>
+    </property>
+    <property name="ftrLastDownloadDate" type="string">
+      <column length="8" name="fTrLastDownloadDate"/>
+    </property>
+    <property name="htrLastDownloadTime" type="string">
+      <column length="6" name="hTrLastDownloadTime"/>
+    </property>
+    <property name="ctrTerminalStatus" type="java.lang.Character">
+      <column length="1" name="cTrTerminalStatus"/>
+    </property>
+    <property name="ctrPrinterStatus" type="java.lang.Character">
+      <column length="1" name="cTrPrinterStatus"/>
+    </property>
+    <property name="ctrHopper1status" type="java.lang.Character">
+      <column length="1" name="cTrHopper1Status"/>
+    </property>
+    <property name="ctrHopper2status" type="java.lang.Character">
+      <column length="1" name="cTrHopper2Status"/>
+    </property>
+    <property name="ctrHopper3status" type="java.lang.Character">
+      <column length="1" name="cTrHopper3Status"/>
+    </property>
+    <property name="ctrHopper4status" type="java.lang.Character">
+      <column length="1" name="cTrHopper4Status"/>
+    </property>
+    <property name="ctrForceUpdate" type="java.lang.Character">
+      <column length="1" name="cTrForceUpdate"/>
+    </property>
+    <property name="ctrSaldoAmount" type="big_decimal">
+      <column name="cTrSaldoAmount" precision="12"/>
+    </property>
+    <property name="ctrSaldoAmountDollar" type="big_decimal">
+      <column name="cTrSaldoAmountDollar" precision="12"/>
+    </property>
+    <property name="ctrMode" type="java.lang.Character">
+      <column length="1" name="cTrMode"/>
+    </property>
+    <property name="ctrStatusChangeReason" type="string">
+      <column length="2" name="cTrStatusChangeReason"/>
+    </property>
+    <property name="ftrCreationDate" type="string">
+      <column length="8" name="fTrCreationDate"/>
+    </property>
+    <property name="htrCreationTime" type="string">
+      <column length="6" name="hTrCreationTime"/>
+    </property>
+    <property name="ctrLogicalStatus" type="java.lang.Character">
+      <column length="1" name="cTrLogicalStatus"/>
+    </property>
+    <property name="ctrMultMerchantId" type="string">
+      <column length="2" name="cTrMultMerchantId"/>
+    </property>
+    <set inverse="true" name="taTerminalApplications">
+      <key>
+        <column length="15" name="cTAMerchantId" not-null="true"/>
+        <column length="4" name="cTATerminalNum" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaTerminalApplication"/>
+    </set>
+  </class>
+</hibernate-mapping>

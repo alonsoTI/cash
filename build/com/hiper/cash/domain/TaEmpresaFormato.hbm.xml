@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/01/2010 03:01:00 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaEmpresaFormato" schema="dbo" table="taEmpresaFormato">
+    <id name="cefidEmpresa" type="string">
+      <column length="15" name="cEFIdEmpresa"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="defxmlent" type="string">
+      <column name="dEFXMLEnt"/>
+    </property>
+    <property name="defencent" type="string">
+      <column name="dEFENCEnt"/>
+    </property>
+    <property name="defxmlsal" type="string">
+      <column name="dEFXMLSal"/>
+    </property>
+    <property name="defencsal" type="string">
+      <column name="dEFENCSal"/>
+    </property>
+  </class>
+</hibernate-mapping>

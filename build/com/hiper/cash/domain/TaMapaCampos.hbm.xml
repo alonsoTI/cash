@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaMapaCampos" schema="dbo" table="taMapaCampos">
+    <id name="cmcidMapaCampos" type="int">
+      <column name="cMCIdMapaCampos"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dmcnombre" type="string">
+      <column length="100" name="dMCNombre"/>
+    </property>
+    <property name="cmcmodifyUser" type="string">
+      <column length="7" name="cMCModifyUser"/>
+    </property>
+    <property name="fmcmodifyDate" type="string">
+      <column length="8" name="fMCModifyDate"/>
+    </property>
+    <property name="hmcmodifyTime" type="string">
+      <column length="6" name="hMCModifyTime"/>
+    </property>
+    <set inverse="true" name="taServicioxEmpresas">
+      <key>
+        <column name="cSEmIdMapaCampos"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaServicioxEmpresa"/>
+    </set>
+    <set inverse="true" name="taDetalleMapaCamposes">
+      <key>
+        <column name="cDMIdMapaCampos" not-null="true"/>
+      </key>
+      <one-to-many class="com.hiper.cash.domain.TaDetalleMapaCampos"/>
+    </set>
+  </class>
+</hibernate-mapping>

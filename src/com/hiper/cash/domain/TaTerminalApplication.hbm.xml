@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TaTerminalApplication" schema="dbo" table="taTerminalApplication">
+    <composite-id class="com.hiper.cash.domain.TaTerminalApplicationId" name="id">
+      <key-property name="ctamerchantId" type="string">
+        <column length="15" name="cTAMerchantId"/>
+      </key-property>
+      <key-property name="ctaterminalNum" type="string">
+        <column length="4" name="cTATerminalNum"/>
+      </key-property>
+      <key-property name="ctaapplicationId" type="string">
+        <column length="20" name="cTAApplicationID"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.hiper.cash.domain.TmTerminal" fetch="select" insert="false" name="tmTerminal" update="false">
+      <column length="15" name="cTAMerchantId" not-null="true"/>
+      <column length="4" name="cTATerminalNum" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.hiper.cash.domain.TmApplication" fetch="select" insert="false" name="tmApplication" update="false">
+      <column length="20" name="cTAApplicationID" not-null="true"/>
+    </many-to-one>
+    <property name="ctaterminalSn" type="string">
+      <column length="8" name="cTATerminalSN"/>
+    </property>
+    <property name="ntafilesGroup" type="java.lang.Integer">
+      <column name="nTAFilesGroup"/>
+    </property>
+    <property name="ctafilesVersion" type="java.lang.Long">
+      <column name="cTAFilesVersion"/>
+    </property>
+    <property name="ctastatus" type="java.lang.Character">
+      <column length="1" name="cTAStatus"/>
+    </property>
+    <property name="ntaapplicationFlowSize" type="java.lang.Long">
+      <column name="nTAApplicationFlowSize"/>
+    </property>
+    <property name="ctamodifyUser" type="string">
+      <column length="7" name="cTAModifyUser"/>
+    </property>
+    <property name="ftamodifyDate" type="string">
+      <column length="8" name="fTAModifyDate"/>
+    </property>
+    <property name="htamodifyTime" type="string">
+      <column length="6" name="hTAModifyTime"/>
+    </property>
+    <property name="ctareqCashBack" type="string">
+      <column length="1" name="cTAReqCashBack"/>
+    </property>
+    <property name="ctamultiproduct" type="string">
+      <column length="1" name="cTAMultiproduct"/>
+    </property>
+    <property name="ctacardWriter" type="string">
+      <column length="1" name="cTACardWriter"/>
+    </property>
+    <property name="ctaonlineTip" type="java.lang.Character">
+      <column length="1" name="cTAOnlineTip"/>
+    </property>
+    <property name="ctasaveMoney" type="java.lang.Character">
+      <column length="1" name="cTASaveMoney"/>
+    </property>
+  </class>
+</hibernate-mapping>

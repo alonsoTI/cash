@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/08/2009 06:16:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BFPCash_HCenter" name="com.hiper.cash.domain.TmFormato" schema="dbo" table="tmFormato">
+    <id name="cfidFormato" type="int">
+      <column name="cFIdFormato"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dfnombre" type="string">
+      <column length="30" name="dFNombre"/>
+    </property>
+    <property name="dfdescripcion" type="string">
+      <column length="50" name="dFDescripcion"/>
+    </property>
+    <property name="cftipo" type="string">
+      <column length="2" name="cFTipo"/>
+    </property>
+    <property name="dfseparador" type="string">
+      <column length="3" name="dFSeparador"/>
+    </property>
+    <property name="cfmodifyUser" type="string">
+      <column length="7" name="cFModifyUser"/>
+    </property>
+    <property name="ffmodifyDate" type="string">
+      <column length="8" name="fFModifyDate"/>
+    </property>
+    <property name="hfmodifyTime" type="string">
+      <column length="6" name="hFModifyTime"/>
+    </property>          
+    <list inverse="true" name="taDetalleFormatos" lazy="false">    
+      <key>
+        <column name="cDFIdFormato" not-null="true"/>
+      </key>
+      <index column="nDFPosicionCampo"></index>
+      <one-to-many class="com.hiper.cash.domain.TaDetalleFormato"/>
+    </list>    
+  </class>
+</hibernate-mapping>
