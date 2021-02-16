@@ -24,6 +24,8 @@
         </plugins>
   </build>
   <properties>
-  	<sonar.dynamicAnalysis>false</sonar.dynamicAnalysis>
+  	<sonar.projectKey>alonsoTI_cash</sonar.projectKey>
+  <sonar.organization>alonsoti</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 </project>
