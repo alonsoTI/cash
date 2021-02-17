@@ -31,7 +31,7 @@ import com.hiper.cash.util.Fecha;
 import com.hiper.cash.xml.bean.BeanDataLoginXML;
 
 public class ConsultarTransferenciasAction extends DispatchAction {
-	
+	//clases
 	private TransferenciasDelegate delegado =  TransferenciasDelegate.getInstance();
 	private Logger logger =  Logger.getLogger(this.getClass());
 
